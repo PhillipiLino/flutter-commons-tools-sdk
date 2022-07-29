@@ -28,3 +28,6 @@ migrate_working_dir/
 .dart_tool/
 .packages
 build/
+**/coverage
+dart-coverage-helper
+test/coverage_test.dart

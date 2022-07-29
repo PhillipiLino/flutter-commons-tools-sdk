@@ -33,6 +33,10 @@ extension NumExtensions on num? {
 
   String toPercent([String locale = 'pt_Br']) {
     var percent = NumberFormat.percentPattern(locale);
-    return percent.format(this);
+    try {
+      return percent.format(this);
+    } catch (e) {
+      return percent.format(0);
+    }
   }
 }

@@ -109,4 +109,41 @@ main() {
     expect(formattedValue, isA<String>());
     expect(formattedValue, '230');
   });
+
+  test('Value to percent', () {
+    // Given
+    const value = 0.9;
+
+    // When
+    final formattedValue = value.toPercent();
+
+    // Then
+    expect(formattedValue, isA<String>());
+    expect(formattedValue, '90%');
+  });
+
+  test('Value to percent passing null', () {
+    // Given
+    const int? value = null;
+
+    // When
+    final formattedValue = value.toPercent();
+
+    // Then
+    expect(formattedValue, isA<String>());
+    expect(formattedValue, '0%');
+  });
+
+  test('Value to percent with different locale', () {
+    // Given
+    const locale = 'en_US';
+    const value = 0.23;
+
+    // When
+    final formattedValue = value.toPercent(locale);
+
+    // Then
+    expect(formattedValue, isA<String>());
+    expect(formattedValue, '23%');
+  });
 }
