@@ -1,6 +1,6 @@
 name: solfacil_tools_sdk
-description: A new Flutter package project.
-version: 0.0.1
+description: SDK de ferramentas mobile da Solfácil
+version: 1.0.0
 homepage:
 
 environment:
