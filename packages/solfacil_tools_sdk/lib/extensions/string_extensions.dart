@@ -41,6 +41,46 @@ extension StringExtension on String? {
     return true;
   }
 
+  bool get isValidCNPJ {
+    if (this == null) return false;
+
+    var cleanText = this!.onlyDigits();
+    if (cleanText.isEmpty) return false;
+    if (cleanText.length != 14) return false;
+
+    if (RegExp(r'^(\d)\1*$').hasMatch(cleanText)) return false;
+
+    var dvSize = cleanText.length - 2;
+    var numbers = cleanText.substring(0, dvSize);
+    var digits = cleanText.substring(dvSize);
+    var soma = 0;
+    var pos = dvSize - 7;
+
+    for (var i = dvSize; i >= 1; i--) {
+      var currentNumber = int.tryParse(numbers[dvSize - i]) ?? 0;
+      soma += currentNumber * pos--;
+      if (pos < 2) pos = 9;
+    }
+
+    var result = soma % 11 < 2 ? 0 : 11 - soma % 11;
+    if (result != (int.tryParse(digits[0]) ?? 0)) return false;
+
+    dvSize = dvSize + 1;
+    numbers = cleanText.substring(0, dvSize);
+    soma = 0;
+    pos = dvSize - 7;
+    for (var i = dvSize; i >= 1; i--) {
+      var currentNumber = int.tryParse(numbers[dvSize - i]) ?? 0;
+      soma += currentNumber * pos--;
+      if (pos < 2) pos = 9;
+    }
+
+    result = soma % 11 < 2 ? 0 : 11 - soma % 11;
+    if (result != (int.tryParse(digits[1]) ?? 0)) return false;
+
+    return true;
+  }
+
   bool matchRegex(String regex) => RegExp(regex).hasMatch(this ?? '');
 
   num fromCurrency([String locale = 'pt_Br']) {
