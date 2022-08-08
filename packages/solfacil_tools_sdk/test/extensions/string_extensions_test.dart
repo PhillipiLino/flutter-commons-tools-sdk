@@ -169,6 +169,61 @@ main() {
     expect(isValid, false);
   });
 
+  test('Valid cnpj', () {
+    // Given
+    const cpf = '54854501000164';
+
+    // When
+    final isValid = cpf.isValidCNPJ;
+
+    // Then
+    expect(isValid, true);
+  });
+
+  test('Valid cnpj with masks', () {
+    // Given
+    const cpf = '23.033.952/0001-07';
+
+    // When
+    final isValid = cpf.isValidCNPJ;
+
+    // Then
+    expect(isValid, true);
+  });
+
+  test('Valid cnpj passing empty text', () {
+    // Given
+    const cpf = '';
+
+    // When
+    final isValid = cpf.isValidCNPJ;
+
+    // Then
+    expect(isValid, false);
+  });
+
+  test('Valid cnpj passing equal digits', () {
+    // Given
+    const cpf = '11111111111111';
+
+    // When
+    final isValid = cpf.isValidCNPJ;
+
+    // Then
+    expect(isValid, false);
+  });
+
+  test('Valid cnpj passing wrong cnpj', () {
+    // Given
+    const cpf = '54854501000165';
+
+    // When
+    final isValid = cpf.isValidCNPJ;
+
+    // Then
+    expect(isValid, false);
+  });
+
   test('Match regex', () {
     // Given
     const textToCompare = 'email@test.com';

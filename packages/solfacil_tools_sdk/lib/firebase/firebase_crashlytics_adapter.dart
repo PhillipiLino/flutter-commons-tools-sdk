@@ -20,9 +20,9 @@ class FirebaseCrashlyticsAdapter {
     );
 
     if (errorCode != null) {
-      FirebaseCrashlytics.instance.setCustomKey('error_code', errorCode);
+      crashlytics.setCustomKey('error_code', errorCode);
     }
 
-    return FirebaseCrashlytics.instance.setCustomKey('error_message', reason);
+    return crashlytics.setCustomKey('error_message', reason);
   }
 }
