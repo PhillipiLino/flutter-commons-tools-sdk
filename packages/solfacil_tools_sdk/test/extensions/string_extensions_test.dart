@@ -309,4 +309,37 @@ main() {
     // Then
     expect(expectedResult, result);
   });
+
+  test('Capitalize text', () {
+    // Arrange
+    const text = 'testing capitalize function';
+
+    // Act
+    final capitalized = text.toCapitalized();
+
+    // Assert
+    expect(capitalized, 'Testing capitalize function');
+  });
+
+  test('Capitalize text with number as first', () {
+    // Arrange
+    const text = '1 testing capitalize function';
+
+    // Act
+    final capitalized = text.toCapitalized();
+
+    // Assert
+    expect(capitalized, '1 testing capitalize function');
+  });
+
+  test('Text to title case', () {
+    // Arrange
+    const text = 'testing to title case function';
+
+    // Act
+    final capitalized = text.toTitleCase;
+
+    // Assert
+    expect(capitalized, 'Testing To Title Case Function');
+  });
 }

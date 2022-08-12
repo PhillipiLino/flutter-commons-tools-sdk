@@ -1,7 +1,7 @@
 import 'package:intl/intl.dart';
 import 'package:solfacil_tools_sdk/constants/regex.dart';
 
-extension StringExtension on String? {
+extension NullableStringExtension on String? {
   bool get isValidEmail => RegExp(emailRegex).hasMatch(this ?? '');
 
   bool get isValidPhoneNumber => RegExp(phoneNumberRegex).hasMatch(this ?? '');
@@ -112,4 +112,14 @@ extension StringExtension on String? {
   }
 
   String onlyDigits() => this?.replaceAll(RegExp(r'\D'), '') ?? '';
+}
+
+extension StringExtension on String {
+  String toCapitalized() =>
+      length > 0 ? '${this[0].toUpperCase()}${substring(1)}' : '';
+
+  String get toTitleCase => replaceAll(RegExp(' +'), ' ')
+      .split(' ')
+      .map((str) => str.toCapitalized())
+      .join(' ');
 }
