@@ -1,17 +1,12 @@
 import 'package:launchdarkly_flutter_client_sdk/launchdarkly_flutter_client_sdk.dart';
 
 class LaunchDarklyAdapter {
-  Future<void> configure(String mobileKey) async {
+  static Future<void> configure(String mobileKey) async {
     final LDConfig ldConfig = LDConfigBuilder(mobileKey).build();
     final LDUser ldUser = LDUserBuilder('teste').build();
 
     await LDClient.start(ldConfig, ldUser);
-    await LDClient.setOnline(true);
     return;
-  }
-
-  stopClient() async {
-    await LDClient.close();
   }
 
   Future<void> setUser(

@@ -6,21 +6,7 @@ import 'package:solfacil_tools_sdk/log/log_manager.dart';
 import 'external_remote_config_interface.dart';
 
 class SolfacilLaunchDarklySDK extends IExternalRemoteConfigs {
-  late final LaunchDarklyAdapter launchDarklyAdapter;
-
-  SolfacilLaunchDarklySDK(String mobileKey) {
-    _initializeApp(mobileKey);
-  }
-
-  Future _initializeApp(String mobileKey) async {
-    try {
-      launchDarklyAdapter = LaunchDarklyAdapter()..configure(mobileKey);
-      return true;
-    } catch (e) {
-      LogManager.shared.logError('LAUNCH_DARKLY_SDK: $e');
-      return null;
-    }
-  }
+  late final LaunchDarklyAdapter launchDarklyAdapter = LaunchDarklyAdapter();
 
   @override
   Future<bool> getBool(String key, bool defaultValue) async {
@@ -60,12 +46,6 @@ class SolfacilLaunchDarklySDK extends IExternalRemoteConfigs {
       LogManager.shared.logError('LAUNCH_DARKLY_SDK: $e');
       return defaultValue;
     }
-  }
-
-  @override
-  Future<void> changeEnvironment(String environmentMobileKey) async {
-    await launchDarklyAdapter.stopClient();
-    return await launchDarklyAdapter.configure(environmentMobileKey);
   }
 
   @override
