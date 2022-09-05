@@ -24,22 +24,42 @@ class SolfacilLaunchDarklySDK extends IExternalRemoteConfigs {
 
   @override
   Future<bool> getBool(String key, bool defaultValue) async {
-    return await launchDarklyAdapter.getBool(key, defaultValue);
+    try {
+      return await launchDarklyAdapter.getBool(key, defaultValue);
+    } catch (e) {
+      LogManager.shared.logError('LAUNCH_DARKLY_SDK: $e');
+      return defaultValue;
+    }
   }
 
   @override
   Future<double> getDouble(String key, double defaultValue) async {
-    return await launchDarklyAdapter.getDouble(key, defaultValue);
+    try {
+      return await launchDarklyAdapter.getDouble(key, defaultValue);
+    } catch (e) {
+      LogManager.shared.logError('LAUNCH_DARKLY_SDK: $e');
+      return defaultValue;
+    }
   }
 
   @override
   Future<int> getInt(String key, int defaultValue) async {
-    return await launchDarklyAdapter.getInt(key, defaultValue);
+    try {
+      return await launchDarklyAdapter.getInt(key, defaultValue);
+    } catch (e) {
+      LogManager.shared.logError('LAUNCH_DARKLY_SDK: $e');
+      return defaultValue;
+    }
   }
 
   @override
   Future<String> getString(String key, String defaultValue) async {
-    return await launchDarklyAdapter.getString(key, defaultValue);
+    try {
+      return await launchDarklyAdapter.getString(key, defaultValue);
+    } catch (e) {
+      LogManager.shared.logError('LAUNCH_DARKLY_SDK: $e');
+      return defaultValue;
+    }
   }
 
   @override
