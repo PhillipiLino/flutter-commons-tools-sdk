@@ -1,6 +1,6 @@
 name: solfacil_tools_sdk
 description: SDK de ferramentas mobile da Solfácil
-version: 1.0.0
+version: 1.1.0
 homepage:
 
 environment:
@@ -12,17 +12,20 @@ dependencies:
     sdk: flutter
   firebase_core: ^1.20.0
   firebase_analytics: ^9.2.1
-  firebase_performance: ^0.8.2+1
   firebase_crashlytics: ^2.8.6
   cloud_firestore: ^3.4.0
   logger: ^1.1.0
   intl: ^0.17.0
   shared_preferences: ^2.0.6
+  equatable: ^2.0.3
+  flutter_appauth: ^4.2.0
+  launchdarkly_flutter_client_sdk: ^1.1.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  mocktail: ^0.3.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

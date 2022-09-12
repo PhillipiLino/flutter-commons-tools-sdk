@@ -9,7 +9,7 @@ class RequestLogEvent {
   final Map<String, dynamic>? headers;
   final String? contentType;
   final Map<String, dynamic>? queryParameters;
-  final Map<String, dynamic>? response;
+  final dynamic response;
   final int? statusCode;
   final Exception? exception;
   final Level level;

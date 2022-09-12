@@ -114,61 +114,6 @@ main() {
     expect(isValid, isFalse);
   });
 
-  test('Valid cpf', () {
-    // Given
-    const cpf = '01234567890';
-
-    // When
-    final isValid = cpf.isValidCPF;
-
-    // Then
-    expect(isValid, true);
-  });
-
-  test('Valid cpf with masks', () {
-    // Given
-    const cpf = '012.345.678-90';
-
-    // When
-    final isValid = cpf.isValidCPF;
-
-    // Then
-    expect(isValid, true);
-  });
-
-  test('Valid cpf passing empty text', () {
-    // Given
-    const cpf = '';
-
-    // When
-    final isValid = cpf.isValidCPF;
-
-    // Then
-    expect(isValid, false);
-  });
-
-  test('Valid cpf passing equal digits', () {
-    // Given
-    const cpf = '11111111111';
-
-    // When
-    final isValid = cpf.isValidCPF;
-
-    // Then
-    expect(isValid, false);
-  });
-
-  test('Valid cpf passing wrong cpf', () {
-    // Given
-    const cpf = '12345567890';
-
-    // When
-    final isValid = cpf.isValidCPF;
-
-    // Then
-    expect(isValid, false);
-  });
-
   test('Match regex', () {
     // Given
     const textToCompare = 'email@test.com';
@@ -253,5 +198,38 @@ main() {
 
     // Then
     expect(expectedResult, result);
+  });
+
+  test('Capitalize text', () {
+    // Arrange
+    const text = 'testing capitalize function';
+
+    // Act
+    final capitalized = text.toCapitalized();
+
+    // Assert
+    expect(capitalized, 'Testing capitalize function');
+  });
+
+  test('Capitalize text with number as first', () {
+    // Arrange
+    const text = '1 testing capitalize function';
+
+    // Act
+    final capitalized = text.toCapitalized();
+
+    // Assert
+    expect(capitalized, '1 testing capitalize function');
+  });
+
+  test('Text to title case', () {
+    // Arrange
+    const text = 'testing to title case function';
+
+    // Act
+    final capitalized = text.toTitleCase;
+
+    // Assert
+    expect(capitalized, 'Testing To Title Case Function');
   });
 }
