@@ -28,5 +28,5 @@ jobs:
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          base-path: packages/solfacil_sdk
-          path-to-lcov: packages/solfacil_sdk/coverage/lcov.info
+          base-path: packages/solfacil_tools_sdk
+          path-to-lcov: packages/solfacil_tools_sdk/coverage/lcov.info
