@@ -1,0 +1,32 @@
+name: Run Tests and Coveralls
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Analyze code
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Configure git
+        env:
+          TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        run: git config --global url."https://${TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+      
+      - uses: actions/checkout@v1
+      - uses: subosito/flutter-action@v1
+
+      - name: Run analyze and tests
+        run: |
+          cd packages/solfacil_tools_sdk
+          flutter pub get
+          flutter analyze
+          flutter test --coverage
+          cd ../..
+
+      - name: Run Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          base-path: packages/solfacil_sdk
+          path-to-lcov: packages/solfacil_sdk/coverage/lcov.info
