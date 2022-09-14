@@ -1,3 +1,8 @@
+# [1.1.1] - 2022-09-14
+
+## Bugfix:
+- Correção na regex de validação de emails para aceitar emails com `-` no domínio
+
 # [1.1.0] - 2022-09-12
 
 ## Feature:
@@ -28,5 +33,6 @@
    - ScrollController
    - String
 
+[1.1.1]: https://github.com/solfacil/sdk-tools-mobile/releases/tag/1.1.1
 [1.1.0]: https://github.com/solfacil/sdk-tools-mobile/releases/tag/1.1.0
 [1.0.0]: https://github.com/solfacil/sdk-tools-mobile/releases/tag/1.0.0
