@@ -1,3 +1,8 @@
+# [1.1.2] - 2022-09-29
+
+## Feature:
+- Remoção da biblioteca `flutter_appauth`
+
 # [1.1.1] - 2022-09-14
 
 ## Bugfix:
@@ -33,6 +38,7 @@
    - ScrollController
    - String
 
+[1.1.2]: https://github.com/solfacil/sdk-tools-mobile/releases/tag/1.1.2
 [1.1.1]: https://github.com/solfacil/sdk-tools-mobile/releases/tag/1.1.1
 [1.1.0]: https://github.com/solfacil/sdk-tools-mobile/releases/tag/1.1.0
 [1.0.0]: https://github.com/solfacil/sdk-tools-mobile/releases/tag/1.0.0
