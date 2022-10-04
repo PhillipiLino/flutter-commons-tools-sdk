@@ -1,3 +1,8 @@
+# [1.1.3] - 2022-10-04
+
+## Feature:
+- Adição do formatador de texto `KwpInputFormatter`
+
 # [1.1.2] - 2022-09-29
 
 ## Feature:
