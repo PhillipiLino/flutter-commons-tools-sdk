@@ -1,0 +1,20 @@
+name: Create update dev branch
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    name: Create branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:  
+      - uses: actions/checkout@v1
+
+      - name: Create update dev PR
+        uses: repo-sync/pull-request@v2
+        with:
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          destination_branch: dev
+          pr_title: Update dev with main
+          pr_body: ""
