@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:solfacil_tools_sdk/preferences/solfacil_shared_preferences.dart';
+import 'package:solfacil_tools_sdk/src/preferences/solfacil_shared_preferences.dart';
 
 main() {
   test('Testing get int', () async {

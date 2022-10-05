@@ -1,7 +1,7 @@
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:solfacil_tools_sdk/firebase/firebase_crashlytics_adapter.dart';
+import 'package:solfacil_tools_sdk/src/firebase/firebase_crashlytics_adapter.dart';
 
 import '../doubles/mocks/firebase_crashlytics_mock.dart';
 

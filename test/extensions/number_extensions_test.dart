@@ -1,6 +1,6 @@
 import 'package:intl/intl.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:solfacil_tools_sdk/extensions/number_extensions.dart';
+import 'package:solfacil_tools_sdk/src/extensions/number_extensions.dart';
 
 main() {
   test('Value to currency', () {

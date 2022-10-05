@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:solfacil_tools_sdk/input_formatters/kwh_input_formatter.dart';
+import 'package:solfacil_tools_sdk/input_formatters.dart';
 
 main() {
   test('Format kwh with 12', () {

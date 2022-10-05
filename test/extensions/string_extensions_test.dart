@@ -1,7 +1,7 @@
 import 'package:intl/intl.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:solfacil_tools_sdk/constants/regex.dart';
-import 'package:solfacil_tools_sdk/extensions/string_extensions.dart';
+import 'package:solfacil_tools_sdk/src/constants/regex.dart';
+import 'package:solfacil_tools_sdk/src/extensions/string_extensions.dart';
 
 main() {
   test('Valid email', () {

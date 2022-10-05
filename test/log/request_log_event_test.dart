@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:logger/logger.dart';
-import 'package:solfacil_tools_sdk/log/request_log_event.dart';
+import 'package:solfacil_tools_sdk/src/log/request_log_event.dart';
 
 main() {
   test('Create event using main constructor', () {

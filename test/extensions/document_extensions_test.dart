@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:solfacil_tools_sdk/extensions/document_extensions.dart';
+import 'package:solfacil_tools_sdk/src/extensions/document_extensions.dart';
 
 main() {
   test('Valid cpf', () {
