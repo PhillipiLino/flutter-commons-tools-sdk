@@ -1,7 +1,7 @@
 library solfacil_firebase_sdk;
 
 import 'package:solfacil_tools_sdk/src/launch_darkly/launch_darkly_adapter.dart';
-import 'package:solfacil_tools_sdk/src/log/log_manager.dart';
+import 'package:solfacil_tools_sdk/src/log/logger.dart';
 
 import 'external_remote_config_interface.dart';
 

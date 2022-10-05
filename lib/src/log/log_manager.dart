@@ -1,9 +1,8 @@
-import 'package:solfacil_tools_sdk/src/log/request_log_event.dart';
-import 'package:solfacil_tools_sdk/src/log/sol_logger.dart';
+part of solfacil_tools_sdk;
 
 class LogManager {
   SolLogger? logger;
-  bool debugMode = false;
+  List<LogType> typesToLog = [];
 
   static final LogManager shared = LogManager.internal();
 
@@ -12,22 +11,22 @@ class LogManager {
   LogManager.internal() : logger = SolLogger();
 
   logRequestEvent(RequestLogEvent event) {
-    if (!debugMode) return;
+    if (!typesToLog.contains(LogType.request)) return;
     logger?.logRequestEvent(event);
   }
 
   logWarning(dynamic message) {
-    if (!debugMode) return;
+    if (!typesToLog.contains(LogType.warning)) return;
     logger?.logWarning(message);
   }
 
   logInfo(dynamic message) {
-    if (!debugMode) return;
+    if (!typesToLog.contains(LogType.info)) return;
     logger?.logInfo(message);
   }
 
   logError(dynamic message) {
-    if (!debugMode) return;
+    if (!typesToLog.contains(LogType.error)) return;
     logger?.logError(message);
   }
 }

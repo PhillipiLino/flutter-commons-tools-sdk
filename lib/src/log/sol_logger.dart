@@ -1,6 +1,4 @@
-import 'package:logger/logger.dart';
-
-import 'request_log_event.dart';
+part of solfacil_tools_sdk;
 
 class SolLogger {
   Logger? logger;

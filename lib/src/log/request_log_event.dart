@@ -1,4 +1,4 @@
-import 'package:logger/logger.dart';
+part of solfacil_tools_sdk;
 
 typedef LogEventCallback = bool Function(RequestLogEvent event);
 

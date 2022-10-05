@@ -2,6 +2,7 @@ library solfacil_tools_sdk;
 
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'package:solfacil_tools_sdk/src/solfacil_tools_sdk.dart';
 
 part 'cnpj_input_formatter.dart';
 part 'cpf_cnpj_input_formatter.dart';

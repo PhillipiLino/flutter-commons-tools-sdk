@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:solfacil_tools_sdk/src/firebase/firebase_crashlytics_adapter.dart';
-import 'package:solfacil_tools_sdk/src/log/log_manager.dart';
+import 'package:solfacil_tools_sdk/src/log/logger.dart';
 
 import '../firebase/firebase_analytics_adapter.dart';
 import '../firebase/firebase_database_adapter.dart';
