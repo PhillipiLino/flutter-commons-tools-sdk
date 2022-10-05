@@ -1,4 +1,4 @@
-import 'package:intl/intl.dart';
+part of solfacil_tools_sdk;
 
 extension NumExtensions on num? {
   String toCurrency({

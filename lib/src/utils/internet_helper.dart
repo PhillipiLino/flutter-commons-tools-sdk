@@ -1,4 +1,4 @@
-import 'dart:io';
+part of solfacil_tools_sdk;
 
 class InternetHelper {
   Future<bool> hasNetwork() async {

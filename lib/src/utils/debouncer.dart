@@ -1,5 +1,4 @@
-import 'dart:async';
-import 'dart:ui';
+part of solfacil_tools_sdk;
 
 class Debouncer {
   final int milliseconds;

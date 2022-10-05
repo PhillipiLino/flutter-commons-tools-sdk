@@ -1,4 +1,4 @@
 // coverage:ignore-file
-import 'package:flutter/material.dart';
+part of solfacil_tools_sdk;
 
 hideKeyboard() => FocusManager.instance.primaryFocus?.unfocus();

@@ -1,5 +1,5 @@
 // coverage:ignore-file
-import 'package:flutter/material.dart';
+part of solfacil_tools_sdk;
 
 extension ScrollControllerExtensions on ScrollController {
   scrollDown({

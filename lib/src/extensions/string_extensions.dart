@@ -1,5 +1,4 @@
-import 'package:intl/intl.dart';
-import 'package:solfacil_tools_sdk/src/constants/regex.dart';
+part of solfacil_tools_sdk;
 
 extension NullableStringExtension on String? {
   bool get isValidEmail => RegExp(emailRegex).hasMatch(this ?? '');

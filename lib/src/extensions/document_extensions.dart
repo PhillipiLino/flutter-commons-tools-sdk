@@ -1,4 +1,4 @@
-import 'package:solfacil_tools_sdk/src/extensions/string_extensions.dart';
+part of solfacil_tools_sdk;
 
 extension DocumentStringExtension on String? {
   bool get isValidCPF {

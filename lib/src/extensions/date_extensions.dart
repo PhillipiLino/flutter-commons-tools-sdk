@@ -1,6 +1,6 @@
-import 'package:intl/intl.dart';
+part of solfacil_tools_sdk;
 
-extension DateFormats on DateFormat {
+extension DateFormatExtension on DateFormat {
   DateTime? tryParse(String inputString, [bool utc = false]) {
     try {
       final formattedDate = parse(inputString, utc);
