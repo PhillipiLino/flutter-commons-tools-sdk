@@ -1,12 +1,11 @@
-library solfacil_firebase_sdk;
-
-import 'package:solfacil_tools_sdk/src/launch_darkly/launch_darkly_adapter.dart';
-import 'package:solfacil_tools_sdk/src/log/logger.dart';
-
-import 'external_remote_config_interface.dart';
+part of solfacil_tools_sdk;
 
 class SolfacilLaunchDarklySDK extends IExternalRemoteConfigs {
   late final LaunchDarklyAdapter launchDarklyAdapter = LaunchDarklyAdapter();
+
+  static Future<void> configure(String mobileKey) async {
+    return await LaunchDarklyAdapter.configure(mobileKey);
+  }
 
   @override
   Future<bool> getBool(String key, bool defaultValue) async {

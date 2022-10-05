@@ -1,3 +1,5 @@
+part of solfacil_tools_sdk;
+
 abstract class IExternalRemoteConfigs {
   Future<void> setUser(
     String userId,

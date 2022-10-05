@@ -1,9 +1,9 @@
-import 'package:launchdarkly_flutter_client_sdk/launchdarkly_flutter_client_sdk.dart';
+part of solfacil_tools_sdk;
 
 class LaunchDarklyAdapter {
   static Future<void> configure(String mobileKey) async {
     final LDConfig ldConfig = LDConfigBuilder(mobileKey).build();
-    final LDUser ldUser = LDUserBuilder('teste').build();
+    final LDUser ldUser = LDUserBuilder('undefined').build();
 
     await LDClient.start(ldConfig, ldUser);
     return;
