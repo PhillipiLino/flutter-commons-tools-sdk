@@ -1,6 +1,4 @@
-import 'package:shared_preferences/shared_preferences.dart';
-
-import 'solfacil_preferences_interface.dart';
+part of solfacil_tools_sdk;
 
 class SolfacilSharedPreferences implements ISolfacilPreferences {
   final _preferences = SharedPreferences.getInstance();

@@ -1,3 +1,5 @@
+part of solfacil_tools_sdk;
+
 abstract class ISolfacilPreferences {
   Future<String?> getString(String key);
   Future<bool> setString(String key, String value);
