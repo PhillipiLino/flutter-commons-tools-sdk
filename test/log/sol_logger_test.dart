@@ -1,6 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:logger/src/logger.dart';
-import 'package:solfacil_tools_sdk/src/log/logger.dart';
 
 import 'sol_logger_spy.dart';
 
@@ -39,29 +38,5 @@ main() {
     // Then
     expect(manager.loggedMessage, 'Teste');
     expect(manager.currentLevel, Level.info);
-  });
-
-  test('Test Log request info', () {
-    // Given
-    final manager = SolLoggerSpy();
-    final event = RequestLogEvent(
-      url: 'url',
-      data: 'teste_data',
-      method: 'POST',
-      headers: {},
-      contentType: 'contentType',
-      queryParameters: {},
-      response: {},
-      exception: null,
-      level: Level.error,
-    );
-
-    // When
-    manager.logRequestEvent(event);
-
-    // Then
-    expect(manager.loggedMessage, event.toJson());
-    expect(manager.currentLevel, event.level);
-    expect(manager.eventToLog, event);
   });
 }

@@ -1,5 +1,4 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:logger/logger.dart';
 import 'package:solfacil_tools_sdk/src/log/logger.dart';
 
 main() {
@@ -14,7 +13,7 @@ main() {
     final Map<String, dynamic> queryParameters = {};
     final Map<String, dynamic> response = {};
     const exception = null;
-    const level = Level.error;
+    const logType = LogType.error;
 
     // When
     final event = RequestLogEvent(
@@ -26,7 +25,7 @@ main() {
       queryParameters: queryParameters,
       response: response,
       exception: exception,
-      level: level,
+      logType: logType,
       statusCode: statusCode,
     );
 
@@ -63,7 +62,7 @@ main() {
     expect(event.response, response);
     expect(event.statusCode, statusCode);
     expect(event.exception, exception);
-    expect(event.level, Level.error);
+    expect(event.logType, LogType.error);
     expect(event.toJson(), expectedJson);
     expect(event.toString(), expectedString);
   });

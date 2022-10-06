@@ -7,12 +7,6 @@ class SolLoggerSpy extends SolLogger {
   RequestLogEvent? eventToLog;
 
   @override
-  logRequestEvent(RequestLogEvent event) {
-    eventToLog = event;
-    super.logRequestEvent(event);
-  }
-
-  @override
   log(message, Level level) {
     currentLevel = level;
     loggedMessage = message;

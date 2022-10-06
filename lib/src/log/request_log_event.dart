@@ -12,7 +12,7 @@ class RequestLogEvent {
   final dynamic response;
   final int? statusCode;
   final Exception? exception;
-  final Level level;
+  final LogType logType;
 
   RequestLogEvent({
     required this.url,
@@ -24,7 +24,7 @@ class RequestLogEvent {
     this.response,
     this.statusCode,
     this.exception,
-    this.level = Level.debug,
+    this.logType = LogType.info,
   });
 
   Map<String, dynamic> toJson() => {
