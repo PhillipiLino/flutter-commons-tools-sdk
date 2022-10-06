@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:solfacil_tools_sdk/src/extensions/iterable_extensions.dart';
+import 'package:solfacil_tools_sdk/src/solfacil_tools_sdk.dart';
 
 main() {
   test('Group maps by key', () {

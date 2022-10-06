@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:solfacil_tools_sdk/src/utils/debouncer.dart';
+import 'package:solfacil_tools_sdk/src/solfacil_tools_sdk.dart';
 
 main() {
   test('Test debouncer', () async {

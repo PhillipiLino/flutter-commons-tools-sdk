@@ -1,6 +1,5 @@
 import 'package:logger/src/logger.dart';
-import 'package:solfacil_tools_sdk/src/log/request_log_event.dart';
-import 'package:solfacil_tools_sdk/src/log/sol_logger.dart';
+import 'package:solfacil_tools_sdk/src/log/logger.dart';
 
 class SolLoggerSpy extends SolLogger {
   dynamic loggedMessage;
