@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:solfacil_tools_sdk/solfacil_tools_sdk.dart';
 
 void main() {
   runApp(const MyApp());

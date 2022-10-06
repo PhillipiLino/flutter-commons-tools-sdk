@@ -1,6 +1,4 @@
-import 'dart:math';
-
-import 'external_trackers_interface.dart';
+part of solfacil_tools_sdk;
 
 class SolfacilTrackersManager {
   final List<IExternalTrackers> trackers;

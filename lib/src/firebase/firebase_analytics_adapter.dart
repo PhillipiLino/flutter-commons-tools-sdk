@@ -1,4 +1,4 @@
-import 'package:firebase_analytics/firebase_analytics.dart';
+part of solfacil_tools_sdk;
 
 class FirebaseAnalyticsAdapter {
   final FirebaseAnalytics analytics;

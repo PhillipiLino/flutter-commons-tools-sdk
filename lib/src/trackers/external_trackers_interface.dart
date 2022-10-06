@@ -1,3 +1,5 @@
+part of solfacil_tools_sdk;
+
 abstract class IExternalTrackers {
   Future logSuccessLogin(
     String userId,

@@ -1,4 +1,4 @@
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+part of solfacil_tools_sdk;
 
 class FirebaseCrashlyticsAdapter {
   final FirebaseCrashlytics crashlytics;

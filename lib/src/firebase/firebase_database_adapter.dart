@@ -1,4 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+part of solfacil_tools_sdk;
 
 class FirebaseDatabaseAdapter {
   final FirebaseFirestore firestore;
