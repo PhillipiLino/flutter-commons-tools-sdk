@@ -31,9 +31,6 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
-/coverage/
-dart-coverage-helper
-test/coverage_test.dart
 
 # Symbolication related
 app.*.symbols
