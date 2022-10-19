@@ -41,7 +41,7 @@ Pacote com helpers que facilitam em algumas funções das aplicações e SDKs.
 
 ### Versão atual
 
-* 1.1.3 (Acesse o [changelog](CHANGELOG.md) para visualizar todas mudanças)
+* 2.0.0 (Acesse o [changelog](CHANGELOG.md) para visualizar todas mudanças)
 
 ### Dependências
 
