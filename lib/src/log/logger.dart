@@ -1,7 +1,5 @@
 library solfacil_tools_sdk;
 
-import 'dart:developer';
-
 import 'package:logger/logger.dart';
 
 part 'log_manager.dart';
