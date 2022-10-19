@@ -39,4 +39,13 @@ class LaunchDarklyAdapter {
   Future<String> getString(String key, String defaultValue) async {
     return await LDClient.stringVariation(key, defaultValue);
   }
+
+  Future<Map<String, dynamic>> getJSON(
+    String key,
+    Map<String, dynamic> defaultValue,
+  ) async {
+    final result =
+        await LDClient.jsonVariation(key, LDValue.fromCodecValue(defaultValue));
+    return castOrNull<Map<String, dynamic>>(result.codecValue()) ?? {};
+  }
 }

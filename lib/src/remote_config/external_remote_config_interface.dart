@@ -10,4 +10,8 @@ abstract class IExternalRemoteConfigs {
   Future<int> getInt(String key, int defaultValue);
   Future<double> getDouble(String key, double defaultValue);
   Future<String> getString(String key, String defaultValue);
+  Future<Map<String, dynamic>> getJSON(
+    String key,
+    Map<String, dynamic> defaultValue,
+  );
 }

@@ -48,6 +48,19 @@ class SolfacilLaunchDarklySDK extends IExternalRemoteConfigs {
   }
 
   @override
+  Future<Map<String, dynamic>> getJSON(
+    String key,
+    Map<String, dynamic> defaultValue,
+  ) async {
+    try {
+      return await launchDarklyAdapter.getJSON(key, defaultValue);
+    } catch (e) {
+      LogManager.shared.logError('LAUNCH_DARKLY_SDK: $e');
+      return defaultValue;
+    }
+  }
+
+  @override
   Future<void> setUser(
     String userId,
     String userEmail, {
