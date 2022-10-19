@@ -19,7 +19,7 @@ jobs:
       
       - name: Create release log file
         run: |
-          sed -n '/# \[${{env.release_version}}\]/,/# \[/p' packages/solfacil_tools_sdk/CHANGELOG.md | sed '1d;$d' > new_release.md
+          sed -n '/# \[${{env.release_version}}\]/,/# \[/p' CHANGELOG.md | sed '1d;$d' > new_release.md
 
       - name: Create github release
         id: create_release

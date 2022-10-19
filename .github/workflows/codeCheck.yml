@@ -18,15 +18,12 @@ jobs:
 
       - name: Run analyze and tests
         run: |
-          cd packages/solfacil_tools_sdk
           flutter pub get
           flutter analyze
           flutter test --coverage
-          cd ../..
 
       - name: Run Coveralls
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          base-path: packages/solfacil_tools_sdk
-          path-to-lcov: packages/solfacil_tools_sdk/coverage/lcov.info
+          path-to-lcov: coverage/lcov.info
