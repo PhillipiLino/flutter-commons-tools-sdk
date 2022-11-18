@@ -5,6 +5,22 @@ class SolfacilFirebaseSDK extends IExternalTrackers {
   late final FirebaseAnalyticsAdapter analyticsAdapter;
   late final FirebaseCrashlyticsAdapter crashlyticsAdapter;
 
+  static initialize({String? name, FirebaseOptions? options}) async {
+    await Firebase.initializeApp(name: name, options: options);
+  }
+
+  static recordCrashlyticsError(Object error, StackTrace stackTrace, isFatal) {
+    FirebaseCrashlytics.instance.recordError(error, stackTrace, fatal: true);
+  }
+
+  static recordCrashlyticsFlutterFatalError(
+    FlutterErrorDetails flutterErrorDetails,
+  ) async {
+    await FirebaseCrashlytics.instance.recordFlutterFatalError(
+      flutterErrorDetails,
+    );
+  }
+
   SolfacilFirebaseSDK() {
     _initializeApp();
   }
@@ -41,14 +57,16 @@ class SolfacilFirebaseSDK extends IExternalTrackers {
   }
 
   @override
-  Future setLogedUser(
-    String userId,
-    String email, {
+  Future setLogedUser({
+    required String userId,
+    required String email,
+    required String name,
     Map<String, dynamic>? aditionalInfos,
   }) async {
     final infos = aditionalInfos ?? {};
     await analyticsAdapter.setUserId(userId);
     await analyticsAdapter.setUserProperty(name: 'email', value: email);
+    await analyticsAdapter.setUserProperty(name: 'name', value: name);
     for (MapEntry<String, dynamic> info in infos.entries) {
       await analyticsAdapter.setUserProperty(name: info.key, value: info.value);
     }

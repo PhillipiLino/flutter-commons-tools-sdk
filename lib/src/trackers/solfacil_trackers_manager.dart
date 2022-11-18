@@ -5,13 +5,19 @@ class SolfacilTrackersManager {
 
   SolfacilTrackersManager(this.trackers);
 
-  Future setLogedUser(
-    String userId,
-    String email, {
+  Future setLogedUser({
+    required String userId,
+    required String email,
+    required String name,
     Map<String, dynamic>? aditionalInfos,
   }) async {
     for (var element in trackers) {
-      element.setLogedUser(userId, email, aditionalInfos: aditionalInfos);
+      element.setLogedUser(
+        userId: userId,
+        email: email,
+        name: name,
+        aditionalInfos: aditionalInfos,
+      );
     }
 
     return;

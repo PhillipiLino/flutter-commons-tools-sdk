@@ -54,6 +54,7 @@ Pacote com helpers que facilitam em algumas funções das aplicações e SDKs.
 - `shared_preferences`: ^2.0.6
 - `equatable`: ^2.0.3
 - `launchdarkly_flutter_client_sdk`: ^1.1.4
+- `mixpanel_flutter`: ^2.0.0
 - `flutter_lints`: ^2.0.0
 - `mocktail`: ^0.3.0
 

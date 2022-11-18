@@ -7,9 +7,10 @@ abstract class IExternalTrackers {
     Map<String, dynamic>? aditionalInfos,
   });
 
-  Future setLogedUser(
-    String userId,
-    String email, {
+  Future setLogedUser({
+    required String userId,
+    required String email,
+    required String name,
     Map<String, dynamic>? aditionalInfos,
   });
 
