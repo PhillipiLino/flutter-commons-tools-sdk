@@ -33,19 +33,6 @@ abstract class IExternalTrackers {
     required Map<String, dynamic>? infos,
   });
 
-  Future startNewHttpMetric(
-    String url,
-    String httpMethod,
-    String key,
-  );
-
-  Future stopHttpMetric(
-    String metricKey, {
-    required String responseContentType,
-    required int httpResponseCode,
-    required int responsePayloadSize,
-  });
-
   Future sendData({
     required String collectionName,
     required Map<String, Object> info,

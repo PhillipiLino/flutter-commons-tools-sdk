@@ -94,17 +94,6 @@ class SolfacilMixpanelSDK extends IExternalTrackers {
   }
 
   @override
-  Future startNewHttpMetric(String url, String httpMethod, String key) async {}
-
-  @override
-  Future stopHttpMetric(
-    String metricKey, {
-    required String responseContentType,
-    required int httpResponseCode,
-    required int responsePayloadSize,
-  }) async {}
-
-  @override
   Future sendData({
     required String collectionName,
     required Map<String, Object> info,

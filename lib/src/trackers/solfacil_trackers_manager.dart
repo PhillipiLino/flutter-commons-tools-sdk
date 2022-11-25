@@ -72,34 +72,6 @@ class SolfacilTrackersManager {
     return;
   }
 
-  Future<String> startNewHttpMetric(String url, String httpMethod) async {
-    final key = _generateRandomString(8);
-
-    for (var element in trackers) {
-      element.startNewHttpMetric(url, httpMethod, key);
-    }
-
-    return key;
-  }
-
-  Future stopHttpMetric(
-    String metricKey, {
-    required String responseContentType,
-    required int httpResponseCode,
-    required int responsePayloadSize,
-  }) async {
-    for (var element in trackers) {
-      element.stopHttpMetric(
-        metricKey,
-        responseContentType: responseContentType,
-        httpResponseCode: httpResponseCode,
-        responsePayloadSize: responsePayloadSize,
-      );
-    }
-
-    return;
-  }
-
   Future saveFeedback(
     String userId,
     String email,
@@ -154,12 +126,5 @@ class SolfacilTrackersManager {
         printDebugLog: printDebugLog,
       );
     }
-  }
-
-  String _generateRandomString(int len) {
-    var r = Random();
-    const chars =
-        'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890';
-    return List.generate(len, (index) => chars[r.nextInt(chars.length)]).join();
   }
 }
