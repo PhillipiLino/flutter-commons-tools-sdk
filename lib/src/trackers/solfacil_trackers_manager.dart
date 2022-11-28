@@ -72,28 +72,6 @@ class SolfacilTrackersManager {
     return;
   }
 
-  Future saveFeedback(
-    String userId,
-    String email,
-    int starsCount,
-    String comment,
-  ) async {
-    for (var element in trackers) {
-      element.sendData(
-        collectionName: 'feedbacks',
-        info: {
-          'userId': userId,
-          'email': email,
-          'stars': starsCount,
-          'comment': comment,
-          'date': DateTime.now(),
-        },
-      );
-    }
-
-    return;
-  }
-
   Future logSuccessLogin(
     String userId,
     String email, {
@@ -108,23 +86,5 @@ class SolfacilTrackersManager {
     }
 
     return;
-  }
-
-  recordError({
-    required Exception exception,
-    required StackTrace stack,
-    required String reason,
-    int? errorCode,
-    bool printDebugLog = true,
-  }) {
-    for (var element in trackers) {
-      element.recordException(
-        exception: exception,
-        stack: stack,
-        reason: reason,
-        errorCode: errorCode,
-        printDebugLog: printDebugLog,
-      );
-    }
   }
 }

@@ -3,7 +3,6 @@ part of solfacil_tools_sdk;
 class SolfacilFirebaseSDK extends IExternalTrackers {
   late final FirebaseDatabaseAdapter databaseAdapter;
   late final FirebaseAnalyticsAdapter analyticsAdapter;
-  late final FirebaseCrashlyticsAdapter crashlyticsAdapter;
 
   static initialize({String? name, FirebaseOptions? options}) async {
     await Firebase.initializeApp(name: name, options: options);
@@ -29,11 +28,9 @@ class SolfacilFirebaseSDK extends IExternalTrackers {
     try {
       final firestore = FirebaseFirestore.instance;
       final analytics = FirebaseAnalytics.instance;
-      final crashlytics = FirebaseCrashlytics.instance;
 
       databaseAdapter = FirebaseDatabaseAdapter(firestore);
       analyticsAdapter = FirebaseAnalyticsAdapter(analytics);
-      crashlyticsAdapter = FirebaseCrashlyticsAdapter(crashlytics);
       return true;
     } catch (e) {
       LogManager.shared.logError('FIREBASE_SDK: $e');
@@ -128,7 +125,6 @@ class SolfacilFirebaseSDK extends IExternalTrackers {
     return;
   }
 
-  @override
   Future sendData({
     required String collectionName,
     required Map<String, Object> info,
@@ -137,27 +133,5 @@ class SolfacilFirebaseSDK extends IExternalTrackers {
     final collection = await databaseAdapter.getCollection(collectionName);
     await databaseAdapter.addFieldToCollection(collection, info, path);
     return;
-  }
-
-  @override
-  Future recordException({
-    required Exception exception,
-    required StackTrace stack,
-    required String reason,
-    int? errorCode,
-    bool printDebugLog = true,
-  }) async {
-    try {
-      return crashlyticsAdapter.recordError(
-        exception: exception,
-        stack: stack,
-        reason: reason,
-        errorCode: errorCode,
-        printDebugLog: printDebugLog,
-      );
-    } catch (e) {
-      LogManager.shared.logError('FIREBASE_SDK: $e');
-      return null;
-    }
   }
 }

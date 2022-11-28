@@ -92,20 +92,4 @@ class SolfacilMixpanelSDK extends IExternalTrackers {
     mixpanel.track('close_page_infos', properties: infos);
     return;
   }
-
-  @override
-  Future sendData({
-    required String collectionName,
-    required Map<String, Object> info,
-    String? path,
-  }) async {}
-
-  @override
-  Future recordException({
-    required Exception exception,
-    required StackTrace stack,
-    required String reason,
-    int? errorCode,
-    bool printDebugLog = true,
-  }) async {}
 }

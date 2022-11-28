@@ -32,18 +32,4 @@ abstract class IExternalTrackers {
     String pageName, {
     required Map<String, dynamic>? infos,
   });
-
-  Future sendData({
-    required String collectionName,
-    required Map<String, Object> info,
-    String? path,
-  });
-
-  Future recordException({
-    required Exception exception,
-    required StackTrace stack,
-    required String reason,
-    int? errorCode,
-    bool printDebugLog = true,
-  });
 }
