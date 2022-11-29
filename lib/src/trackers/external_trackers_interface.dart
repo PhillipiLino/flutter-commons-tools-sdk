@@ -7,9 +7,10 @@ abstract class IExternalTrackers {
     Map<String, dynamic>? aditionalInfos,
   });
 
-  Future setLogedUser(
-    String userId,
-    String email, {
+  Future setLogedUser({
+    required String userId,
+    required String email,
+    required String name,
     Map<String, dynamic>? aditionalInfos,
   });
 
@@ -30,32 +31,5 @@ abstract class IExternalTrackers {
   Future stopTrackPage(
     String pageName, {
     required Map<String, dynamic>? infos,
-  });
-
-  Future startNewHttpMetric(
-    String url,
-    String httpMethod,
-    String key,
-  );
-
-  Future stopHttpMetric(
-    String metricKey, {
-    required String responseContentType,
-    required int httpResponseCode,
-    required int responsePayloadSize,
-  });
-
-  Future sendData({
-    required String collectionName,
-    required Map<String, Object> info,
-    String? path,
-  });
-
-  Future recordException({
-    required Exception exception,
-    required StackTrace stack,
-    required String reason,
-    int? errorCode,
-    bool printDebugLog = true,
   });
 }

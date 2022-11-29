@@ -1,3 +1,9 @@
+# [2.1.0] - 2022-11-29
+
+## Feature:
+- Adição do mixpanel como mais um SDK de tracker 
+- Remoção da responsabilidade de log de erros da classe de trackers para a IReportError
+
 # [2.0.0] - 2022-10-19
 
 ## Feature:
@@ -49,6 +55,7 @@
    - ScrollController
    - String
 
+[2.1.0]: https://github.com/solfacil/sdk-tools-mobile/releases/tag/2.1.0
 [2.0.0]: https://github.com/solfacil/sdk-tools-mobile/releases/tag/2.0.0
 [1.1.3]: https://github.com/solfacil/sdk-tools-mobile/releases/tag/1.1.3
 [1.1.2]: https://github.com/solfacil/sdk-tools-mobile/releases/tag/1.1.2
