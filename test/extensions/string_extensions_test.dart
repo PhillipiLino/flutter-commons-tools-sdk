@@ -231,4 +231,66 @@ main() {
     // Assert
     expect(capitalized, 'Testing To Title Case Function');
   });
+  test('Valid customer full name', () {
+    // Given
+    const name = 'Ana Maria';
+
+    // When
+    final isValid = name.isValidFullName;
+
+    // Then
+    expect(isValid, true);
+  });
+
+  test('Empty customer name', () {
+    // Given
+    const name = '';
+
+    // When
+    final isValid = name.isValidFullName;
+
+    // Then
+    expect(isValid, false);
+  });
+
+  test('Customer first name must have at least 2 characters', () {
+    // Given
+    const name1 = 'Ed Silva';
+    const name2 = 'E. Silva';
+
+    // When
+    final isName1Valid = name1.isValidFullName;
+    final isName2Valid = name2.isValidFullName;
+
+    // Then
+    expect(isName1Valid, true);
+    expect(isName2Valid, false);
+  });
+
+  test('Customer last name must have at least 2 characters', () {
+    // Given
+    const name1 = 'Akemi Li';
+    const name2 = 'Elaine S.';
+
+    // When
+    final isName1Valid = name1.isValidFullName;
+    final isName2Valid = name2.isValidFullName;
+
+    // Then
+    expect(isName1Valid, true);
+    expect(isName2Valid, false);
+  });
+
+  test(
+      'At least the customers first and middle name must be two characters long',
+      () {
+    // Given
+    const name = 'Akemi Li Ayumi';
+
+    // When
+    final isName1Valid = name.isValidFullName;
+
+    // Then
+    expect(isName1Valid, true);
+  });
 }
