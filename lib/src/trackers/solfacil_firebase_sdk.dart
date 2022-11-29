@@ -3,7 +3,22 @@ part of solfacil_tools_sdk;
 class SolfacilFirebaseSDK extends IExternalTrackers {
   late final FirebaseDatabaseAdapter databaseAdapter;
   late final FirebaseAnalyticsAdapter analyticsAdapter;
-  late final FirebaseCrashlyticsAdapter crashlyticsAdapter;
+
+  static initialize({String? name, FirebaseOptions? options}) async {
+    await Firebase.initializeApp(name: name, options: options);
+  }
+
+  static recordCrashlyticsError(Object error, StackTrace stackTrace, isFatal) {
+    FirebaseCrashlytics.instance.recordError(error, stackTrace, fatal: true);
+  }
+
+  static recordCrashlyticsFlutterFatalError(
+    FlutterErrorDetails flutterErrorDetails,
+  ) async {
+    await FirebaseCrashlytics.instance.recordFlutterFatalError(
+      flutterErrorDetails,
+    );
+  }
 
   SolfacilFirebaseSDK() {
     _initializeApp();
@@ -13,11 +28,9 @@ class SolfacilFirebaseSDK extends IExternalTrackers {
     try {
       final firestore = FirebaseFirestore.instance;
       final analytics = FirebaseAnalytics.instance;
-      final crashlytics = FirebaseCrashlytics.instance;
 
       databaseAdapter = FirebaseDatabaseAdapter(firestore);
       analyticsAdapter = FirebaseAnalyticsAdapter(analytics);
-      crashlyticsAdapter = FirebaseCrashlyticsAdapter(crashlytics);
       return true;
     } catch (e) {
       LogManager.shared.logError('FIREBASE_SDK: $e');
@@ -41,14 +54,16 @@ class SolfacilFirebaseSDK extends IExternalTrackers {
   }
 
   @override
-  Future setLogedUser(
-    String userId,
-    String email, {
+  Future setLogedUser({
+    required String userId,
+    required String email,
+    required String name,
     Map<String, dynamic>? aditionalInfos,
   }) async {
     final infos = aditionalInfos ?? {};
     await analyticsAdapter.setUserId(userId);
     await analyticsAdapter.setUserProperty(name: 'email', value: email);
+    await analyticsAdapter.setUserProperty(name: 'name', value: name);
     for (MapEntry<String, dynamic> info in infos.entries) {
       await analyticsAdapter.setUserProperty(name: info.key, value: info.value);
     }
@@ -110,18 +125,6 @@ class SolfacilFirebaseSDK extends IExternalTrackers {
     return;
   }
 
-  @override
-  Future startNewHttpMetric(String url, String httpMethod, String key) async {}
-
-  @override
-  Future stopHttpMetric(
-    String metricKey, {
-    required String responseContentType,
-    required int httpResponseCode,
-    required int responsePayloadSize,
-  }) async {}
-
-  @override
   Future sendData({
     required String collectionName,
     required Map<String, Object> info,
@@ -130,27 +133,5 @@ class SolfacilFirebaseSDK extends IExternalTrackers {
     final collection = await databaseAdapter.getCollection(collectionName);
     await databaseAdapter.addFieldToCollection(collection, info, path);
     return;
-  }
-
-  @override
-  Future recordException({
-    required Exception exception,
-    required StackTrace stack,
-    required String reason,
-    int? errorCode,
-    bool printDebugLog = true,
-  }) async {
-    try {
-      return crashlyticsAdapter.recordError(
-        exception: exception,
-        stack: stack,
-        reason: reason,
-        errorCode: errorCode,
-        printDebugLog: printDebugLog,
-      );
-    } catch (e) {
-      LogManager.shared.logError('FIREBASE_SDK: $e');
-      return null;
-    }
   }
 }

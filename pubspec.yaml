@@ -19,6 +19,7 @@ dependencies:
   shared_preferences: ^2.0.6
   equatable: ^2.0.3
   launchdarkly_flutter_client_sdk: ^1.1.4
+  mixpanel_flutter: ^2.0.0
 
 dev_dependencies:
   flutter_test:
