@@ -23,25 +23,13 @@ Pacote com helpers que facilitam em algumas funções das aplicações e SDKs.
     - [Versão atual](#versão-atual)
     - [Dependências](#dependências)
 - [Instalação](#instalação)
-- [Implementação](#implementação)
-    - [Requisitos de implementação](#requisitos-de-implementação)
-    - [Passos](#passos)
-- [Componentes](#classes)
-    - [AuthenticatorLoginPage](#authenticatorloginpage)
-    - [AuthenticatorLoginController](#authenticatorlogincontroller)
-        - [Mudar ambiente do autenticador](#mudar-ambiente-do-autenticador)
-        - [Login](#login)
-        - [Logout](#logout)
-    - [SSOAuthenticationInfo](#ssoauthenticationinfo)
-- [SSOEnvironment](#ssoenvironment)
         
-
 ## Informações técnicas
 ---
 
 ### Versão atual
 
-* 2.0.0 (Acesse o [changelog](CHANGELOG.md) para visualizar todas mudanças)
+* 2.1.0 (Acesse o [changelog](CHANGELOG.md) para visualizar todas mudanças)
 
 ### Dependências
 
@@ -78,23 +66,5 @@ solfacil_tools_sdk:
 solfacil_tools_sdk:
     path: {caminho_do_pacote}
 ```
-
-<br/>
-
-## Implementação
----
-
-<br/>
-
-Há um exemplo de como implementar a biblioteca [aqui](example/lib/main.dart).
-
-<br/>
-
-### Requisitos de implementação
-
-<br/>
-
-## Componentes
----
 
 ### FIM

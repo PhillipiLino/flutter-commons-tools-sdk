@@ -1,6 +1,6 @@
 name: solfacil_tools_sdk
 description: Pacote com helpers que facilitam em algumas funções das aplicações e SDKs.
-version: 2.0.0
+version: 2.1.0
 homepage: https://github.com/solfacil/cp.mt.sdk-tools-mobile
 
 environment:
