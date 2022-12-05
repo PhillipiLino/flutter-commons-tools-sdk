@@ -253,32 +253,51 @@ main() {
     expect(isValid, false);
   });
 
-  test('Customer first name must have at least 2 characters', () {
-    // Given
-    const name1 = 'Ed Silva';
-    const name2 = 'E. Silva';
+  group('Customer first name must have at least 2 characters', () {
+    test('It should return true', () {
+      // Given
+      const name1 = 'Ed Silva';
 
-    // When
-    final isName1Valid = name1.isValidFullName;
-    final isName2Valid = name2.isValidFullName;
+      // When
+      final isName1Valid = name1.isValidFullName;
 
-    // Then
-    expect(isName1Valid, true);
-    expect(isName2Valid, false);
+      // Then
+      expect(isName1Valid, true);
+    });
+    test('It should return false', () {
+      // Given
+
+      const name2 = 'E. Silva';
+
+      // When
+      final isName2Valid = name2.isValidFullName;
+
+      // Then
+      expect(isName2Valid, false);
+    });
   });
 
-  test('Customer last name must have at least 2 characters', () {
-    // Given
-    const name1 = 'Akemi Li';
-    const name2 = 'Elaine S.';
+  group('Customer last name must have at least 2 characters', () {
+    test('It shoul return true', () {
+      // Given
+      const name1 = 'Akemi Li';
 
-    // When
-    final isName1Valid = name1.isValidFullName;
-    final isName2Valid = name2.isValidFullName;
+      // When
+      final isName1Valid = name1.isValidFullName;
 
-    // Then
-    expect(isName1Valid, true);
-    expect(isName2Valid, false);
+      // Then
+      expect(isName1Valid, true);
+    });
+    test('It shuld return false', () {
+      // Given
+      const name2 = 'Elaine S.';
+
+      // When
+      final isName2Valid = name2.isValidFullName;
+
+      // Then
+      expect(isName2Valid, false);
+    });
   });
 
   test(
