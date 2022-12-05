@@ -7,6 +7,8 @@ extension NullableStringExtension on String? {
 
   bool get isValidDate => RegExp(dateRegex).hasMatch(this ?? '');
 
+  bool get isValidFullName => RegExp(fullNameRegex).hasMatch(this ?? '');
+
   bool matchRegex(String regex) => RegExp(regex).hasMatch(this ?? '');
 
   num fromCurrency([String locale = 'pt_Br']) {
