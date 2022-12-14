@@ -231,85 +231,128 @@ main() {
     // Assert
     expect(capitalized, 'Testing To Title Case Function');
   });
-  test('Valid customer full name', () {
-    // Given
-    const name = 'Ana Maria';
+  group('Validate customer full name', () {
+    test('Valid full name', () {
+      // Given
+      const name = 'Ana Maria';
 
-    // When
-    final isValid = name.isValidFullName;
+      // When
+      final isValid = name.isValidFullName;
 
-    // Then
-    expect(isValid, true);
-  });
+      // Then
+      expect(isValid, true);
+    });
+    test('Empty customer name', () {
+      // Given
+      const name = '';
 
-  test('Empty customer name', () {
-    // Given
-    const name = '';
+      // When
+      final isValid = name.isValidFullName;
 
-    // When
-    final isValid = name.isValidFullName;
-
-    // Then
-    expect(isValid, false);
+      // Then
+      expect(isValid, false);
+    });
   });
 
   group('Customer first name must have at least 2 characters', () {
-    test('It should return true', () {
+    test('It should return true if valid first name', () {
       // Given
-      const name1 = 'Ed Silva';
+      const name = 'Ed Silva';
 
       // When
-      final isName1Valid = name1.isValidFullName;
+      final isNameValid = name.isValidFullName;
 
       // Then
-      expect(isName1Valid, true);
+      expect(isNameValid, true);
     });
-    test('It should return false', () {
+    test('It should return false if invalid first name', () {
       // Given
 
-      const name2 = 'E. Silva';
+      const name = 'E. Silva';
 
       // When
-      final isName2Valid = name2.isValidFullName;
+      final isNameValid = name.isValidFullName;
 
       // Then
-      expect(isName2Valid, false);
+      expect(isNameValid, false);
+    });
+    test(
+        'At least the customers first and middle name must be two characters long',
+        () {
+      // Given
+      const name = 'Akemi Li Ayumi';
+
+      // When
+      final isNameValid = name.isValidFullName;
+
+      // Then
+      expect(isNameValid, true);
     });
   });
 
   group('Customer last name must have at least 2 characters', () {
-    test('It shoul return true', () {
+    test('It should return true if valid last name', () {
       // Given
       const name1 = 'Akemi Li';
 
       // When
-      final isName1Valid = name1.isValidFullName;
+      final isNameValid = name1.isValidFullName;
 
       // Then
-      expect(isName1Valid, true);
+      expect(isNameValid, true);
     });
-    test('It shuld return false', () {
+    test('It should return false if invalid last name', () {
       // Given
-      const name2 = 'Elaine S.';
+      const name = 'Elaine S.';
 
       // When
-      final isName2Valid = name2.isValidFullName;
+      final isNameValid = name.isValidFullName;
 
       // Then
-      expect(isName2Valid, false);
+      expect(isNameValid, false);
     });
   });
 
-  test(
-      'At least the customers first and middle name must be two characters long',
-      () {
-    // Given
-    const name = 'Akemi Li Ayumi';
+  group('Validate special characters', () {
+    test('It should return false if only first valid name', () {
+      // Given
+      const name = 'Bárbara';
 
-    // When
-    final isName1Valid = name.isValidFullName;
+      // When
+      final isNameValid = name.isValidFullName;
 
-    // Then
-    expect(isName1Valid, true);
+      // Then
+      expect(isNameValid, false);
+    });
+    test('It should return true if full name1 with accent', () {
+      // Given
+      const name1 = 'Akemi Lí';
+
+      // When
+      final isNameValid = name1.isValidFullName;
+
+      // Then
+      expect(isNameValid, true);
+    });
+    test('It should return true if full name2 with accent', () {
+      // Given
+      const name2 = 'ÁGATA SA';
+
+      // When
+      final isNameValid = name2.isValidFullName;
+
+      // Then
+      expect(isNameValid, true);
+    });
+    test('It should return false if full name with special characters', () {
+      // Given
+      const name = 'Ana2 Maria#';
+
+      // When
+      final isNameValid = name.isValidFullName;
+
+      // Then
+      expect(isNameValid, false);
+    });
   });
 }
