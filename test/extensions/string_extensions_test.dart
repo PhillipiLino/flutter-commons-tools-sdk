@@ -336,7 +336,7 @@ main() {
     });
     test('It should return true if full name2 with accent', () {
       // Given
-      const name2 = 'ágata sa';
+      const name2 = 'ÁGATA SA';
 
       // When
       final isNameValid = name2.isValidFullName;
