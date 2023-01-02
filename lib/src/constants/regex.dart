@@ -9,4 +9,4 @@ const emailRegex =
     r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9-]+\.[a-zA-Z]+";
 const dateRegex =
     r'^(0[1-9]|[12][0-9]|3[01])(\/|-|\.)(0[1-9]|1[012])(\/|-|\.)(?:19|20)[0-9]{1}[0-9]{1}$';
-const onlyWordsRegex = '[a-zA-ZÀ-ž ]';
+const onlyLettersRegex = '[a-zA-ZÀ-ž ]';
