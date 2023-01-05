@@ -10,7 +10,7 @@ class KwhInputFormatter extends TextInputFormatter {
     String newText = formatter.format(value);
 
     return newValue.copyWith(
-        text: '$newText kwh',
+        text: '$newText kWh',
         selection: TextSelection.collapsed(offset: newText.length));
   }
 }
