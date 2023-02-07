@@ -6,6 +6,7 @@ export 'src/solfacil_tools_sdk.dart'
         usernameRegex,
         emailRegex,
         dateRegex,
+        onlyLettersRegex,
         DateFormatExtension,
         DocumentStringExtension,
         IterablesExtension,

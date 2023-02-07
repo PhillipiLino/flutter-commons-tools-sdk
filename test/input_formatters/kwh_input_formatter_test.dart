@@ -10,7 +10,7 @@ main() {
     // When
     final result = formatter.formatEditUpdate(
         TextEditingValue.empty, const TextEditingValue(text: text));
-    const expectedResult = '12 kwh';
+    const expectedResult = '12 kWh';
 
     // Then
     expect(result.text, expectedResult);
@@ -24,7 +24,7 @@ main() {
     // When
     final result = formatter.formatEditUpdate(
         TextEditingValue.empty, const TextEditingValue(text: text));
-    const expectedResult = '120 kwh';
+    const expectedResult = '120 kWh';
 
     // Then
     expect(result.text, expectedResult);
@@ -38,7 +38,7 @@ main() {
     // When
     final result = formatter.formatEditUpdate(
         TextEditingValue.empty, const TextEditingValue(text: text));
-    const expectedResult = '1.200 kwh';
+    const expectedResult = '1.200 kWh';
 
     // Then
     expect(result.text, expectedResult);
@@ -52,7 +52,7 @@ main() {
     // When
     final result = formatter.formatEditUpdate(
         TextEditingValue.empty, const TextEditingValue(text: text));
-    const expectedResult = '120.000 kwh';
+    const expectedResult = '120.000 kWh';
 
     // Then
     expect(result.text, expectedResult);
