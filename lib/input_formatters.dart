@@ -7,4 +7,6 @@ export 'src/input_formatters/input_formatters.dart'
         DateInputFormatter,
         KwhInputFormatter,
         KwpInputFormatter,
-        PhoneInputFormatter;
+        PhoneInputFormatter,
+        PercentInputFormatter,
+        DoubleCurrencyInputFormatter;
