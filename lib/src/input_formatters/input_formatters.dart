@@ -11,4 +11,5 @@ part 'currency_input_formatter.dart';
 part 'date_input_formatter.dart';
 part 'kwh_input_formatter.dart';
 part 'kwp_input_formatter.dart';
+part 'percent_input_formatter.dart';
 part 'phone_input_formatter.dart';
