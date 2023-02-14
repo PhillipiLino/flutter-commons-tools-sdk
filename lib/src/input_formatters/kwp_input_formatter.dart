@@ -4,7 +4,10 @@ class KwpInputFormatter extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
       TextEditingValue oldValue, TextEditingValue newValue) {
-    double value = int.parse(newValue.text) / 100;
+    double value = newValue.selection.baseOffset == 0
+        ? 0
+        : int.parse(newValue.text.onlyDigits()) / 100;
+
     final formatter = NumberFormat.decimalPattern('pt_Br');
     formatter.minimumFractionDigits = 2;
     formatter.maximumFractionDigits = 2;

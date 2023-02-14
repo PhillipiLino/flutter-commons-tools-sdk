@@ -40,6 +40,9 @@ extension NullableStringExtension on String? {
   }
 
   String onlyDigits() => this?.replaceAll(RegExp(r'\D'), '') ?? '';
+
+  String removeSpecialChars() =>
+      this?.replaceAll(RegExp('[^A-Za-z0-9]'), '') ?? '';
 }
 
 extension StringExtension on String {
