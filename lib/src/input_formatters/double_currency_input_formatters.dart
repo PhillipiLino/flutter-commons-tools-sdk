@@ -1,20 +1,18 @@
 part of solfacil_tools_sdk;
 
-class KwpInputFormatter extends TextInputFormatter {
+class DoubleCurrencyInputFormatter extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
       TextEditingValue oldValue, TextEditingValue newValue) {
-    double value = newValue.selection.baseOffset == 0
-        ? 0
-        : int.parse(newValue.text.onlyDigits()) / 100;
-
+    double value = int.parse(newValue.text) / 100;
+    
     final formatter = NumberFormat.decimalPattern('pt_Br');
     formatter.minimumFractionDigits = 2;
     formatter.maximumFractionDigits = 2;
-    String newText = formatter.format(value);
+    String newText = value.toCurrency();
 
     return newValue.copyWith(
-        text: '$newText kWp',
+        text: newText,
         selection: TextSelection.collapsed(offset: newText.length));
   }
 }

@@ -1,19 +1,16 @@
 part of solfacil_tools_sdk;
 
-class CurrencyInputFormatter extends TextInputFormatter {
+class PercentInputFormatter extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
       TextEditingValue oldValue, TextEditingValue newValue) {
-    int value = newValue.selection.baseOffset == 0
-        ? 0
-        : int.parse(newValue.text.onlyDigits());
-
+    int value =
+        newValue.selection.baseOffset == 0 ? 0 : int.parse(newValue.text);
     final formatter = NumberFormat(null, 'pt_Br');
-    String formattedValue = formatter.format(value);
-    String newText = 'R\$ $formattedValue';
+    String newText = formatter.format(value);
 
     return newValue.copyWith(
-        text: newText,
+        text: '$newText %',
         selection: TextSelection.collapsed(offset: newText.length));
   }
 }
