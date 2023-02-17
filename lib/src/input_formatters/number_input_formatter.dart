@@ -1,19 +1,19 @@
 part of solfacil_tools_sdk;
 
-class CurrencyInputFormatter extends TextInputFormatter {
+class NumberInputFormatter extends TextInputFormatter {
+  final String suffix;
   final bool withDecimals;
   final bool allowNegative;
 
-  CurrencyInputFormatter({
+  NumberInputFormatter({
+    this.suffix = '',
     this.withDecimals = false,
     this.allowNegative = false,
   });
 
   @override
   TextEditingValue formatEditUpdate(
-    TextEditingValue oldValue,
-    TextEditingValue newValue,
-  ) {
+      TextEditingValue oldValue, TextEditingValue newValue) {
     bool isNegative = newValue.text.contains('-');
     final digitsText = newValue.text.onlyDigits();
 
@@ -21,16 +21,18 @@ class CurrencyInputFormatter extends TextInputFormatter {
     final showZero = baseOffset == 0 && digitsText.isEmpty;
     num value = showZero ? 0 : int.parse(digitsText);
 
-    if (withDecimals) value = value / 100;
+    if (withDecimals) value = value / 100.0;
     if (value == 0 || !allowNegative) isNegative = false;
 
     final preffix = isNegative ? '-' : '';
-    String newText = value.toCurrency(showDecimals: withDecimals);
-    newText = '$preffix$newText';
+    final suffixSize = suffix.isEmpty ? 0 : suffix.length + 1;
+
+    String newText = value.toLocale(showDecimals: withDecimals);
+    newText = suffix.isEmpty ? '$preffix$newText' : '$preffix$newText $suffix';
 
     return newValue.copyWith(
       text: newText,
-      selection: TextSelection.collapsed(offset: newText.length),
+      selection: TextSelection.collapsed(offset: newText.length - suffixSize),
     );
   }
 }
