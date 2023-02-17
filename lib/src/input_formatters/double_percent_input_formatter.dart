@@ -6,7 +6,7 @@ class DoublePercentInputFormatter extends TextInputFormatter {
       TextEditingValue oldValue, TextEditingValue newValue) {
     double value = newValue.selection.baseOffset == 0
         ? 0
-        : int.parse(newValue.text.onlyDigits()) / 1 ;
+        : double.parse(newValue.text.onlyDigits());
 
     final formatter = NumberFormat.decimalPattern('pt_Br');
     formatter.minimumFractionDigits = 2;
