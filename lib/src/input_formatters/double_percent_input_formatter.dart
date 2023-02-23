@@ -1,5 +1,6 @@
 part of solfacil_tools_sdk;
 
+@Deprecated('Use PercentInputFormatter with decimals')
 class DoublePercentInputFormatter extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(

@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use_from_same_package
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:solfacil_tools_sdk/input_formatters.dart';
 
@@ -14,9 +16,8 @@ main() {
 
     //Then
     expect(result.text, expectedResult);
-
   });
-    test('Format DoubleCurrency with 123', () {
+  test('Format DoubleCurrency with 123', () {
     //Given
     const text = '123';
     final formatter = DoubleCurrencyInputFormatter();
@@ -28,7 +29,6 @@ main() {
 
     //Then
     expect(result.text, expectedResult);
-
   });
   test('Format DoubleCurrency with 12', () {
     //Given
@@ -42,9 +42,8 @@ main() {
 
     //Then
     expect(result.text, expectedResult);
-
   });
-    test('Format DoubleCurrency with 123400', () {
+  test('Format DoubleCurrency with 123400', () {
     //Given
     const text = '123400';
     final formatter = DoubleCurrencyInputFormatter();
@@ -56,6 +55,5 @@ main() {
 
     //Then
     expect(result.text, expectedResult);
-
   });
 }

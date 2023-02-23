@@ -22,21 +22,26 @@ extension NumExtensions on num? {
   }
 
   String toLocale({String locale = 'pt_Br', bool showDecimals = true}) {
-    final pattern = showDecimals ? '#,###.00' : '#,###';
-    NumberFormat formatter = NumberFormat(pattern, locale);
+    final value = showDecimals ? this : this?.floor();
+    NumberFormat formatter = NumberFormat(null, locale);
+
+    formatter.minimumIntegerDigits = 1;
+    formatter.minimumFractionDigits = showDecimals ? 2 : 0;
+    formatter.maximumFractionDigits = showDecimals ? 2 : 0;
+
     try {
-      return formatter.format(this);
+      return formatter.format(value);
     } catch (e) {
-      return NumberFormat('#,###,0.00', locale).format(0);
+      return formatter.format(0);
     }
   }
 
-  String toPercent([String locale = 'pt_Br']) {
-    var percent = NumberFormat.percentPattern(locale);
-    try {
-      return percent.format(this);
-    } catch (e) {
-      return percent.format(0);
-    }
+  String toPercent({String locale = 'pt_Br', bool showDecimals = true}) {
+    final value = (this as double? ?? 0).toLocale(
+      locale: locale,
+      showDecimals: showDecimals,
+    );
+
+    return '$value %';
   }
 }

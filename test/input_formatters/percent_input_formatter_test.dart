@@ -41,4 +41,56 @@ main() {
     // Then
     expect(result.text, expectedResult);
   });
+
+  test('Format DoublePercent with 12.34', () {
+    //Given
+    const text = '12.34';
+    final formatter = PercentInputFormatter(withDecimals: true);
+
+    //When
+    final result = formatter.formatEditUpdate(
+        TextEditingValue.empty, const TextEditingValue(text: text));
+
+    //Then
+    expect(result.text, '12,34 %');
+  });
+
+  test('Format DoublePercent with 123', () {
+    //Given
+    const text = '1.23';
+    final formatter = PercentInputFormatter(withDecimals: true);
+
+    //When
+    final result = formatter.formatEditUpdate(
+        TextEditingValue.empty, const TextEditingValue(text: text));
+
+    //Then
+    expect(result.text, '1,23 %');
+  });
+
+  test('Format DoublePercent with 12', () {
+    //Given
+    const text = '12';
+    final formatter = PercentInputFormatter(withDecimals: true);
+
+    //When
+    final result = formatter.formatEditUpdate(
+        TextEditingValue.empty, const TextEditingValue(text: text));
+
+    //Then
+    expect(result.text, '0,12 %');
+  });
+
+  test('Format DoublePercent with 12.00', () {
+    //Given
+    const text = '12.00';
+    final formatter = PercentInputFormatter(withDecimals: true);
+
+    //When
+    final result = formatter.formatEditUpdate(
+        TextEditingValue.empty, const TextEditingValue(text: text));
+
+    //Then
+    expect(result.text, '12,00 %');
+  });
 }

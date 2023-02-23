@@ -1,5 +1,6 @@
 part of solfacil_tools_sdk;
 
+@Deprecated('Use NumberInputFormatter with suffix')
 class KwpInputFormatter extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(

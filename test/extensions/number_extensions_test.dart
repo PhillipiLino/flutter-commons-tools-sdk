@@ -1,5 +1,5 @@
-import 'package:intl/intl.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:intl/intl.dart';
 import 'package:solfacil_tools_sdk/src/solfacil_tools_sdk.dart';
 
 main() {
@@ -119,7 +119,19 @@ main() {
 
     // Then
     expect(formattedValue, isA<String>());
-    expect(formattedValue, '90%');
+    expect(formattedValue, '0,90 %');
+  });
+
+  test('Value to percent without decimals', () {
+    // Given
+    const value = 1.90;
+
+    // When
+    final formattedValue = value.toPercent(showDecimals: false);
+
+    // Then
+    expect(formattedValue, isA<String>());
+    expect(formattedValue, '1 %');
   });
 
   test('Value to percent passing null', () {
@@ -131,7 +143,7 @@ main() {
 
     // Then
     expect(formattedValue, isA<String>());
-    expect(formattedValue, '0%');
+    expect(formattedValue, '0,00 %');
   });
 
   test('Value to percent with different locale', () {
@@ -140,10 +152,10 @@ main() {
     const value = 0.23;
 
     // When
-    final formattedValue = value.toPercent(locale);
+    final formattedValue = value.toPercent(locale: locale);
 
     // Then
     expect(formattedValue, isA<String>());
-    expect(formattedValue, '23%');
+    expect(formattedValue, '0.23 %');
   });
 }
