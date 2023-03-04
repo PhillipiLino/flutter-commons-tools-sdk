@@ -1,9 +1,10 @@
-part of solfacil_tools_sdk;
 
-class SolLogger {
+part of commons_tools_sdk;
+
+class LoggerAdapter {
   Logger? logger;
 
-  SolLogger() {
+  LoggerAdapter() {
     logger = Logger();
   }
 

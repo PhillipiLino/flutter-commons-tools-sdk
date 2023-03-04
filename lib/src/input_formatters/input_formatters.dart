@@ -1,9 +1,9 @@
-library solfacil_tools_sdk;
+library commons_tools_sdk;
 
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 
-import '../solfacil_tools_sdk.dart';
+import '../commons_tools_sdk.dart';
 
 part 'cnpj_input_formatter.dart';
 part 'cpf_cnpj_input_formatter.dart';

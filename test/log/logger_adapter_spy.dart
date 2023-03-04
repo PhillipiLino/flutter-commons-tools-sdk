@@ -1,7 +1,7 @@
+import 'package:commons_tools_sdk/src/log/logger.dart';
 import 'package:logger/src/logger.dart';
-import 'package:solfacil_tools_sdk/src/log/logger.dart';
 
-class SolLoggerSpy extends SolLogger {
+class LoggerAdapterSpy extends LoggerAdapter {
   dynamic loggedMessage;
   Level? currentLevel;
   RequestLogEvent? eventToLog;

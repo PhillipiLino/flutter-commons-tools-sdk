@@ -1,4 +1,4 @@
-part of solfacil_tools_sdk;
+part of commons_tools_sdk;
 
 class LaunchDarklyAdapter {
   static Future<void> configure(String mobileKey) async {

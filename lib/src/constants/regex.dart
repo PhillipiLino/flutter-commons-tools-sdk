@@ -1,4 +1,4 @@
-part of solfacil_tools_sdk;
+part of commons_tools_sdk;
 
 const notEmptyRegex = r'^.*$';
 const phoneNumberRegex = r'^\((\d{2})+\) +(\d{5})+\-\d{4}$';

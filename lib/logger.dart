@@ -1,2 +1,2 @@
 export 'src/log/logger.dart'
-    show LogType, LogManager, RequestLogEvent, SolLogger;
+    show LogType, LogManager, RequestLogEvent, LoggerAdapter;

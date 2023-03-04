@@ -1,11 +1,12 @@
-library solfacil_tools_sdk;
+library commons_tools_sdk;
 
 import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:solfacil_tools_sdk/src/log/logger.dart';
+
+import 'log/logger.dart';
 
 part 'constants/regex.dart';
 part 'extensions/date_extensions.dart';

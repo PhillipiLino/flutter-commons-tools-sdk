@@ -1,12 +1,12 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:logger/src/logger.dart';
 
-import 'sol_logger_spy.dart';
+import 'logger_adapter_spy.dart';
 
 main() {
   test('Test Log error', () {
     // Given
-    final manager = SolLoggerSpy();
+    final manager = LoggerAdapterSpy();
 
     // When
     manager.logError('Teste');
@@ -18,7 +18,7 @@ main() {
 
   test('Test Log warning', () {
     // Given
-    final manager = SolLoggerSpy();
+    final manager = LoggerAdapterSpy();
 
     // When
     manager.logWarning('Teste');
@@ -30,7 +30,7 @@ main() {
 
   test('Test Log info', () {
     // Given
-    final manager = SolLoggerSpy();
+    final manager = LoggerAdapterSpy();
 
     // When
     manager.logInfo('Teste');

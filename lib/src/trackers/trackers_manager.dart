@@ -1,9 +1,9 @@
-part of solfacil_tools_sdk;
+part of commons_tools_sdk;
 
-class SolfacilTrackersManager {
+class TrackersManager {
   final List<IExternalTrackers> trackers;
 
-  SolfacilTrackersManager(this.trackers);
+  TrackersManager(this.trackers);
 
   Future setLogedUser({
     required String userId,

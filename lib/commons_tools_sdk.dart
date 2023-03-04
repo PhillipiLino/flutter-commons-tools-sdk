@@ -1,4 +1,4 @@
-export 'src/solfacil_tools_sdk.dart'
+export 'src/commons_tools_sdk.dart'
     show
         notEmptyRegex,
         phoneNumberRegex,

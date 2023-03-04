@@ -1,14 +1,14 @@
-part of solfacil_tools_sdk;
+part of commons_tools_sdk;
 
 class LogManager {
-  SolLogger? logger;
+  LoggerAdapter? logger;
   List<LogType> typesToLog = [];
 
   static final LogManager shared = LogManager.internal();
 
   factory LogManager() => shared;
 
-  LogManager.internal() : logger = SolLogger();
+  LogManager.internal() : logger = LoggerAdapter();
 
   logRequestEvent(RequestLogEvent event) {
     final message = event.toJson();

@@ -1,4 +1,4 @@
-part of solfacil_tools_sdk;
+part of commons_tools_sdk;
 
 @Deprecated('Use PercentInputFormatter with decimals')
 class DoublePercentInputFormatter extends TextInputFormatter {

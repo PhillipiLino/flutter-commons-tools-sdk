@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:solfacil_tools_sdk/input_formatters.dart';
+import 'package:commons_tools_sdk/input_formatters.dart';
 
 main() {
   test('Format complete cpf', () {

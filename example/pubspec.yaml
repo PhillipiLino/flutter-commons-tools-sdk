@@ -31,7 +31,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  solfacil_tools_sdk:
+  commons_tools_sdk:
     path: ../
 
 

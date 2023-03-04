@@ -1,6 +1,6 @@
-part of solfacil_tools_sdk;
+part of commons_tools_sdk;
 
-class SolfacilLaunchDarklySDK extends IExternalRemoteConfigs {
+class LaunchDarklySDK extends IExternalRemoteConfigs {
   late final LaunchDarklyAdapter launchDarklyAdapter = LaunchDarklyAdapter();
 
   static Future<void> configure(String mobileKey) async {

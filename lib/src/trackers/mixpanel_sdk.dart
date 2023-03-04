@@ -1,10 +1,10 @@
-part of solfacil_tools_sdk;
+part of commons_tools_sdk;
 
-class SolfacilMixpanelSDK extends IExternalTrackers {
+class MixpanelSDK extends IExternalTrackers {
   late final Mixpanel mixpanel;
   final String token;
 
-  SolfacilMixpanelSDK(this.token) {
+  MixpanelSDK(this.token) {
     _initializeApp(token);
   }
 

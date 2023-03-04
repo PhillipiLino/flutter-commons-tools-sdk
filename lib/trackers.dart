@@ -1,2 +1,2 @@
 export 'src/trackers/trackers.dart'
-    show IExternalTrackers, SolfacilMixpanelSDK, SolfacilTrackersManager;
+    show IExternalTrackers, MixpanelSDK, TrackersManager;

@@ -1,6 +1,6 @@
-part of solfacil_tools_sdk;
+part of commons_tools_sdk;
 
-class SolfacilSharedPreferences implements ISolfacilPreferences {
+class SharedPreferencesAdapter implements IPreferences {
   final _preferences = SharedPreferences.getInstance();
 
   @override
