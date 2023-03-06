@@ -1,2 +1,1 @@
-export 'src/trackers/trackers.dart'
-    show IExternalTrackers, MixpanelSDK, TrackersManager;
+export 'src/trackers/trackers.dart' show IExternalTrackers, TrackersManager;
