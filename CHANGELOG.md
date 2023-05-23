@@ -1,3 +1,8 @@
+# [1.1.0] - 2023-05-23
+
+### Features:
+- Atualização das dependências para usar o Flutter 3.10
+
 # [1.0.0] - 2022-08-03
 
 ### Features:
