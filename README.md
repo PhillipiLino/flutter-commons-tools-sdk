@@ -1,6 +1,6 @@
 # commons-tools-mobile
 
-![Github Badge](https://img.shields.io/badge/Version-1.1.0-<>)
+![Github Badge](https://img.shields.io/badge/Version-1.2.0-<>)
 ![Github Badge](https://img.shields.io/badge/-Flutter-3dbbe3?&logo=Flutter)
 ![Github Badge](https://img.shields.io/badge/-Dart-268bab?&logo=Dart)
 ![Github Badge](https://img.shields.io/badge/-NullSafety-268bab)
@@ -24,7 +24,7 @@ Pacote com helpers que facilitam em algumas funções das aplicações e SDKs.
 
 ### Versão atual
 
-* 1.1.0 (Acesse o [changelog](CHANGELOG.md) para visualizar todas mudanças)
+* 1.2.0 (Acesse o [changelog](CHANGELOG.md) para visualizar todas mudanças)
 
 ### Dependências
 

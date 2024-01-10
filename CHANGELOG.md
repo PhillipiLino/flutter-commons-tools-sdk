@@ -1,3 +1,8 @@
+# [1.2.0] - 2024-01-10
+
+### Features:
+- Externalizado `Equatable`, `intl` e `collection`
+
 # [1.1.0] - 2023-05-23
 
 ### Features:
