@@ -3,7 +3,9 @@ part of commons_tools_sdk;
 class CPFInputFormatter extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
-      TextEditingValue oldValue, TextEditingValue newValue) {
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
     final text = newValue.text.replaceAll(RegExp(r'\D'), '');
     if (text.length < 4) {
       final selection = TextSelection.collapsed(offset: text.length);

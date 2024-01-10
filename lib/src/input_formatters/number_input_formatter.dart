@@ -13,7 +13,9 @@ class NumberInputFormatter extends TextInputFormatter {
 
   @override
   TextEditingValue formatEditUpdate(
-      TextEditingValue oldValue, TextEditingValue newValue) {
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
     bool isNegative = newValue.text.contains('-');
     final digitsText = newValue.text.onlyDigits();
 

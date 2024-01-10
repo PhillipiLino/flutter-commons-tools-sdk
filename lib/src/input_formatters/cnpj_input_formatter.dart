@@ -3,7 +3,9 @@ part of commons_tools_sdk;
 class CNPJInputFormatter extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
-      TextEditingValue oldValue, TextEditingValue newValue) {
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
     final text = newValue.text.replaceAll(RegExp(r'\D'), '');
     if (text.length < 3) {
       final selection = TextSelection.collapsed(offset: text.length);
@@ -33,7 +35,7 @@ class CNPJInputFormatter extends TextInputFormatter {
       thirtyDivider,
       partFour,
       fourtyDivider,
-      partFive
+      partFive,
     ].join();
 
     final selection = TextSelection.collapsed(offset: newText.length);

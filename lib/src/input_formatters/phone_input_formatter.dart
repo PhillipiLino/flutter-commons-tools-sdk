@@ -3,7 +3,9 @@ part of commons_tools_sdk;
 class PhoneInputFormatter extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
-      TextEditingValue oldValue, TextEditingValue newValue) {
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
     final text = newValue.text.onlyDigits();
     if (text.length < 3) {
       final selection = TextSelection.collapsed(offset: text.length);

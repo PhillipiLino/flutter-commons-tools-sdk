@@ -4,7 +4,9 @@ part of commons_tools_sdk;
 class KwpInputFormatter extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
-      TextEditingValue oldValue, TextEditingValue newValue) {
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
     double value = newValue.selection.baseOffset == 0
         ? 0
         : int.parse(newValue.text.onlyDigits()) / 100;
@@ -15,7 +17,8 @@ class KwpInputFormatter extends TextInputFormatter {
     String newText = formatter.format(value);
 
     return newValue.copyWith(
-        text: '$newText kWp',
-        selection: TextSelection.collapsed(offset: newText.length));
+      text: '$newText kWp',
+      selection: TextSelection.collapsed(offset: newText.length),
+    );
   }
 }
