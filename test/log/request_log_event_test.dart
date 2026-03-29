@@ -39,6 +39,7 @@ void main() {
       'response': response,
       'statusCode': statusCode,
       'exception': exception.toString(),
+      'logType': logType.name,
     };
 
     final expectedString = '---- EVENT INFORMATIONS ----'

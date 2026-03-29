@@ -37,6 +37,7 @@ class RequestLogEvent {
         'response': response,
         'statusCode': statusCode,
         'exception': exception.toString(),
+        'logType': logType.name,
       };
 
   @override
