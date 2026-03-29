@@ -18,7 +18,7 @@ Pacote com helpers que facilitam em algumas funções das aplicações e SDKs.
     - [Dependências](#dependências)
   - [Instalação](#instalação)
     - [FIM](#fim)
-        
+
 ## Informações técnicas
 ---
 
@@ -28,14 +28,13 @@ Pacote com helpers que facilitam em algumas funções das aplicações e SDKs.
 
 ### Dependências
 
-- `logger`: ^1.1.0
-- `intl`: ^0.18.0
-- `shared_preferences`: ^2.0.6
-- `equatable`: ^2.0.3
-- `launchdarkly_flutter_client_sdk`: ^1.1.4
-- `mixpanel_flutter`: ^2.0.0
-- `flutter_lints`: ^2.0.0
-- `mocktail`: ^0.3.0
+- `logger`: ^2.6.1
+- `intl`: ^0.20.2
+- `shared_preferences`: ^2.5.3
+- `equatable`: ^2.0.7
+- `collection`: ^1.19.1
+- `flutter_lints`: ^6.0.0
+- `mocktail`: ^1.0.4
 
 <br/>
 
