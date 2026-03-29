@@ -3,7 +3,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:commons_tools_sdk/input_formatters.dart';
 
-main() {
+void main() {
   final formatter = DoublePercentInputFormatter();
 
   test('Format DoublePercent with 12.34', () {
@@ -12,7 +12,9 @@ main() {
 
     //When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
 
     //Then
     expect(result.text, '12,34 %');
@@ -24,7 +26,9 @@ main() {
 
     //When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
 
     //Then
     expect(result.text, '1,23 %');
@@ -36,7 +40,9 @@ main() {
 
     //When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
 
     //Then
     expect(result.text, '0,12 %');
@@ -48,7 +54,9 @@ main() {
 
     //When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
 
     //Then
     expect(result.text, '12,00 %');

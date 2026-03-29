@@ -2,7 +2,7 @@ import 'package:commons_tools_sdk/src/preferences/preferences.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-main() {
+void main() {
   test('Testing get int', () async {
     const value = 1;
     SharedPreferences.setMockInitialValues({'value': value});

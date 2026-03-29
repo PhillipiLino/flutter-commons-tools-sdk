@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:commons_tools_sdk/input_formatters.dart';
 
-main() {
+void main() {
   test('Format complete phone number', () {
     // Given
     const text = '11999999999';
@@ -9,7 +9,9 @@ main() {
 
     // When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = '(11) 99999-9999';
 
     // Then
@@ -23,7 +25,9 @@ main() {
 
     // When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = '11';
 
     // Then
@@ -37,7 +41,9 @@ main() {
 
     // When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = '(11) 9';
 
     // Then
@@ -51,7 +57,9 @@ main() {
 
     // When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = '(11) 99999';
 
     // Then
@@ -65,7 +73,9 @@ main() {
 
     // When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = '(11) 99999-9';
 
     // Then
@@ -79,7 +89,9 @@ main() {
 
     // When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = '';
 
     // Then

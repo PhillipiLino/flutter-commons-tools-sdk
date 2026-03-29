@@ -3,7 +3,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:commons_tools_sdk/input_formatters.dart';
 
-main() {
+void main() {
   test('Format kwh with 12', () {
     // Given
     const text = '12';
@@ -11,7 +11,9 @@ main() {
 
     // When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = '12 kWh';
 
     // Then
@@ -25,7 +27,9 @@ main() {
 
     // When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = '120 kWh';
 
     // Then
@@ -39,7 +43,9 @@ main() {
 
     // When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = '1.200 kWh';
 
     // Then
@@ -53,7 +59,9 @@ main() {
 
     // When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = '120.000 kWh';
 
     // Then

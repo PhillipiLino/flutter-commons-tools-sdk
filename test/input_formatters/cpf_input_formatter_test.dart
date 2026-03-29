@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:commons_tools_sdk/input_formatters.dart';
 
-main() {
+void main() {
   test('Format complete cpf', () {
     // Given
     const text = '01234567890';
@@ -9,7 +9,9 @@ main() {
 
     // When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = '012.345.678-90';
 
     // Then
@@ -23,7 +25,9 @@ main() {
 
     // When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = '111';
 
     // Then
@@ -37,7 +41,9 @@ main() {
 
     // When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = '111.2';
 
     // Then
@@ -51,7 +57,9 @@ main() {
 
     // When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = '111.222';
 
     // Then
@@ -65,7 +73,9 @@ main() {
 
     // When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = '111.222.3';
 
     // Then
@@ -79,7 +89,9 @@ main() {
 
     // When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = '111.222.333';
 
     // Then
@@ -93,7 +105,9 @@ main() {
 
     // When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = '111.222.333-4';
 
     // Then
@@ -107,7 +121,9 @@ main() {
 
     // When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = '';
 
     // Then

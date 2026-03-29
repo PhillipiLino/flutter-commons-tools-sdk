@@ -3,7 +3,7 @@ import 'package:logger/logger.dart';
 
 import 'logger_adapter_spy.dart';
 
-main() {
+void main() {
   test('Test Log error', () {
     // Given
     final manager = LoggerAdapterSpy();

@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:commons_tools_sdk/input_formatters.dart';
 
-main() {
+void main() {
   test('Format complete cpf', () {
     // Given
     const text = '12345678901';
@@ -9,7 +9,9 @@ main() {
 
     // When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = '123.456.789-01';
 
     // Then
@@ -23,7 +25,9 @@ main() {
 
     // When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = '88.892.128/0001-58';
 
     // Then
@@ -37,7 +41,9 @@ main() {
 
     // When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = '888.921.280-00';
 
     // Then
@@ -51,7 +57,9 @@ main() {
 
     // When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = '88.892.128/0001';
 
     // Then

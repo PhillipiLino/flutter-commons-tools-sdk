@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:commons_tools_sdk/src/log/logger.dart';
 
-main() {
+void main() {
   test('Create event using main constructor', () {
     // Given
     const url = 'Url_to_test';

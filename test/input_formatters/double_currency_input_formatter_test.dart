@@ -3,7 +3,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:commons_tools_sdk/input_formatters.dart';
 
-main() {
+void main() {
   test('Format DoubleCurrency with 1234', () {
     //Given
     const text = '1234';
@@ -11,7 +11,9 @@ main() {
 
     //When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = 'R\$ 12,34';
 
     //Then
@@ -24,7 +26,9 @@ main() {
 
     //When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = 'R\$ 1,23';
 
     //Then
@@ -37,7 +41,9 @@ main() {
 
     //When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = 'R\$ 0,12';
 
     //Then
@@ -50,7 +56,9 @@ main() {
 
     //When
     final result = formatter.formatEditUpdate(
-        TextEditingValue.empty, const TextEditingValue(text: text));
+      TextEditingValue.empty,
+      const TextEditingValue(text: text),
+    );
     const expectedResult = 'R\$ 1.234,00';
 
     //Then

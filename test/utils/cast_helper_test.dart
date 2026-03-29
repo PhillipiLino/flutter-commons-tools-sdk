@@ -1,7 +1,7 @@
 import 'package:commons_tools_sdk/src/commons_tools_sdk.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-main() {
+void main() {
   test('Cast string succefull', () {
     // Arrange
     String? myVar = '';

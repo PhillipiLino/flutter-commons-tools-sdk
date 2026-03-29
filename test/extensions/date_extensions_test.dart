@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:intl/intl.dart';
 
-main() {
+void main() {
   test('Date format parse string with success', () {
     // Arrange
     final dateFormat = DateFormat('dd/MM/yyyy');

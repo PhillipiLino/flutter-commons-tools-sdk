@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:commons_tools_sdk/src/commons_tools_sdk.dart';
 
-main() {
+void main() {
   test('Test debouncer', () async {
     // Given
     bool test = false;

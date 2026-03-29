@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:intl/intl.dart';
 import 'package:commons_tools_sdk/src/commons_tools_sdk.dart';
 
-main() {
+void main() {
   test('Value to currency', () {
     // Given
     const value = 2300.12;

@@ -2,7 +2,7 @@ import 'package:intl/intl.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:commons_tools_sdk/src/commons_tools_sdk.dart';
 
-main() {
+void main() {
   test('Valid email', () {
     // Given
     const email = 'test@test.com';
