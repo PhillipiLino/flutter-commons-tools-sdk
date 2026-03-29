@@ -6,7 +6,7 @@ class CPFAndCNPJInputFormatter extends TextInputFormatter {
     TextEditingValue oldValue,
     TextEditingValue newValue,
   ) {
-    final text = newValue.text.replaceAll(RegExp(r'\D'), '');
+    final text = newValue.text.onlyDigits();
     if (text.length < 12) {
       return CPFInputFormatter().formatEditUpdate(oldValue, newValue);
     }

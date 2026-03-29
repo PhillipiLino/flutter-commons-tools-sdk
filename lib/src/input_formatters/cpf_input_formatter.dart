@@ -6,7 +6,7 @@ class CPFInputFormatter extends TextInputFormatter {
     TextEditingValue oldValue,
     TextEditingValue newValue,
   ) {
-    final text = newValue.text.replaceAll(RegExp(r'\D'), '');
+    final text = newValue.text.onlyDigits();
     if (text.length < 4) {
       final selection = TextSelection.collapsed(offset: text.length);
       return newValue.copyWith(text: text, selection: selection);

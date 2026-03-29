@@ -6,7 +6,7 @@ class CEPInputFormatter extends TextInputFormatter {
     TextEditingValue oldValue,
     TextEditingValue newValue,
   ) {
-    final text = newValue.text.replaceAll(RegExp(r'\D'), '');
+    final text = newValue.text.onlyDigits();
 
     if (text.length < 5) {
       final selection = TextSelection.collapsed(offset: text.length);
