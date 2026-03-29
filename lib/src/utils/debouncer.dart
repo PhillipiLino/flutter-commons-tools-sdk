@@ -3,7 +3,6 @@ import 'dart:ui';
 
 class Debouncer {
   final int milliseconds;
-  late VoidCallback action;
   Timer? _timer;
 
   Debouncer({required this.milliseconds});
