@@ -9,7 +9,7 @@ class DoubleCurrencyInputFormatter extends TextInputFormatter {
   ) {
     double value = int.parse(newValue.text) / 100;
 
-    final formatter = NumberFormat.decimalPattern('pt_Br');
+    final formatter = NumberFormat.decimalPattern('pt_BR');
     formatter.minimumFractionDigits = 2;
     formatter.maximumFractionDigits = 2;
     String newText = value.toCurrency();

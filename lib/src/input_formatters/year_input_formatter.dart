@@ -9,7 +9,7 @@ class YearInputFormatter extends TextInputFormatter {
     int value = newValue.selection.baseOffset == 0
         ? 0
         : int.parse(newValue.text.onlyDigits());
-    final formatter = NumberFormat(null, 'pt_Br');
+    final formatter = NumberFormat(null, 'pt_BR');
     String newText = formatter.format(value);
 
     return newValue.copyWith(

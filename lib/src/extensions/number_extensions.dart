@@ -2,7 +2,7 @@ import '../../commons_tools_sdk.dart';
 
 extension NumExtensions on num? {
   String toCurrency({
-    String locale = 'pt_Br',
+    String locale = 'pt_BR',
     bool showDecimals = true,
   }) {
     NumberFormat currencyFormatter = NumberFormat.simpleCurrency(
@@ -21,7 +21,7 @@ extension NumExtensions on num? {
     }
   }
 
-  String toLocale({String locale = 'pt_Br', bool showDecimals = true}) {
+  String toLocale({String locale = 'pt_BR', bool showDecimals = true}) {
     final value = showDecimals ? this : this?.floor();
     NumberFormat formatter = NumberFormat(null, locale);
 
@@ -36,7 +36,7 @@ extension NumExtensions on num? {
     }
   }
 
-  String toPercent({String locale = 'pt_Br', bool showDecimals = true}) {
+  String toPercent({String locale = 'pt_BR', bool showDecimals = true}) {
     final value = (this as double? ?? 0).toLocale(
       locale: locale,
       showDecimals: showDecimals,

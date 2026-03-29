@@ -11,7 +11,7 @@ class KwhInputFormatter extends TextInputFormatter {
         ? 0
         : int.parse(newValue.text.onlyDigits());
 
-    final formatter = NumberFormat(null, 'pt_Br');
+    final formatter = NumberFormat(null, 'pt_BR');
     String newText = formatter.format(value);
 
     return newValue.copyWith(

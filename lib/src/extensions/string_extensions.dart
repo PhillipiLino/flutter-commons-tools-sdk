@@ -13,7 +13,7 @@ extension NullableStringExtension on String? {
 
   bool matchRegex(String regex) => RegExp(regex).hasMatch(this ?? '');
 
-  num fromCurrency([String locale = 'pt_Br']) {
+  num fromCurrency([String locale = 'pt_BR']) {
     NumberFormat currencyFormatter =
         NumberFormat.simpleCurrency(locale: locale);
 

@@ -11,7 +11,7 @@ class KwpInputFormatter extends TextInputFormatter {
         ? 0
         : int.parse(newValue.text.onlyDigits()) / 100;
 
-    final formatter = NumberFormat.decimalPattern('pt_Br');
+    final formatter = NumberFormat.decimalPattern('pt_BR');
     formatter.minimumFractionDigits = 2;
     formatter.maximumFractionDigits = 2;
     String newText = formatter.format(value);
