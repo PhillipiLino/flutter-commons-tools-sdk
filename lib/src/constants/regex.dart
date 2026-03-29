@@ -1,5 +1,3 @@
-part of commons_tools_sdk;
-
 const notEmptyRegex = r'^.*$';
 const phoneNumberRegex = r'^\((\d{2})+\) +(\d{5})+\-\d{4}$';
 const nameRegex = r'^[0-9a-zA-ZÀ-ÿ ]{0,180}$';

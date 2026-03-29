@@ -1,4 +1,4 @@
-part of commons_tools_sdk;
+import 'dart:io';
 
 class InternetHelper {
   Future<bool> hasNetwork() async {

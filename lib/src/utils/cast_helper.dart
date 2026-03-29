@@ -1,6 +1,6 @@
-part of commons_tools_sdk;
+import '../../logger.dart';
 
-T? castOrNull<T>(value) {
+T? castOrNull<T>(dynamic value) {
   if (value == null) return null;
   try {
     return value;

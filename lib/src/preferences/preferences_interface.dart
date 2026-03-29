@@ -1,4 +1,4 @@
-part of commons_tools_sdk;
+part of 'preferences.dart';
 
 abstract class IPreferences {
   Future<String?> getString(String key);

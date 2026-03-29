@@ -1,5 +1,4 @@
-
-part of commons_tools_sdk;
+part of 'logger.dart';
 
 class LoggerAdapter {
   Logger? logger;
@@ -8,15 +7,15 @@ class LoggerAdapter {
     logger = Logger();
   }
 
-  logWarning(dynamic message) => log(message, Level.warning);
+  dynamic logWarning(dynamic message) => log(message, Level.warning);
 
-  logInfo(dynamic message) => log(message, Level.info);
+  dynamic logInfo(dynamic message) => log(message, Level.info);
 
-  logError(dynamic message) => log(message, Level.error);
+  dynamic logError(dynamic message) => log(message, Level.error);
 
-  logVerbose(dynamic message) => log(message, Level.verbose);
+  dynamic logVerbose(dynamic message) => log(message, Level.trace);
 
-  logStrange(dynamic message) => log(message, Level.wtf);
+  dynamic logStrange(dynamic message) => log(message, Level.fatal);
 
-  log(dynamic message, Level level) => logger?.log(level, message);
+  void log(dynamic message, Level level) => logger?.log(level, message);
 }

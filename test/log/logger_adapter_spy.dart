@@ -1,5 +1,5 @@
 import 'package:commons_tools_sdk/src/log/logger.dart';
-import 'package:logger/src/logger.dart';
+import 'package:logger/logger.dart';
 
 class LoggerAdapterSpy extends LoggerAdapter {
   dynamic loggedMessage;

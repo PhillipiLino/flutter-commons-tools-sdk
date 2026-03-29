@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:logger/src/logger.dart';
+import 'package:logger/logger.dart';
 
 import 'logger_adapter_spy.dart';
 

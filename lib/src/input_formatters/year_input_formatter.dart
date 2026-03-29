@@ -1,4 +1,4 @@
-part of commons_tools_sdk;
+part of 'input_formatters.dart';
 
 class YearInputFormatter extends TextInputFormatter {
   @override

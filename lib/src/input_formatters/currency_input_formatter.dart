@@ -1,4 +1,4 @@
-part of commons_tools_sdk;
+part of 'input_formatters.dart';
 
 class CurrencyInputFormatter extends TextInputFormatter {
   final bool withDecimals;
@@ -19,7 +19,7 @@ class CurrencyInputFormatter extends TextInputFormatter {
 
     final baseOffset = newValue.selection.baseOffset;
     final showZero = baseOffset == 0 && digitsText.isEmpty;
-    num value = showZero ? 0 : int.parse(digitsText);
+    num value = showZero ? 0 : int.parse(digitsText.isEmpty ? '0' : digitsText);
 
     if (withDecimals) value = value / 100;
     if (value == 0 || !allowNegative) isNegative = false;

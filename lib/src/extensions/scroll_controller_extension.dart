@@ -1,8 +1,9 @@
 // coverage:ignore-file
-part of commons_tools_sdk;
+
+import 'package:flutter/material.dart';
 
 extension ScrollControllerExtensions on ScrollController {
-  scrollDown({
+  Future<void> scrollDown({
     int delay = 0,
     Duration animateDuration = const Duration(milliseconds: 300),
   }) async {

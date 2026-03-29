@@ -1,4 +1,4 @@
-part of commons_tools_sdk;
+part of 'trackers.dart';
 
 class TrackersManager {
   final List<IExternalTrackers> trackers;
@@ -9,7 +9,7 @@ class TrackersManager {
     required String userId,
     required String email,
     required String name,
-    Map<String, dynamic>? aditionalInfos,
+    Map<String, Object>? aditionalInfos,
   }) async {
     for (var element in trackers) {
       element.setLogedUser(
@@ -33,7 +33,7 @@ class TrackersManager {
 
   Future trackButtonClick(
     String btnName, {
-    required Map<String, dynamic> infos,
+    required Map<String, Object> infos,
   }) async {
     for (var element in trackers) {
       element.trackButtonClick(btnName, infos: infos);
@@ -52,7 +52,7 @@ class TrackersManager {
 
   Future trackCustomEvent(
     String eventName, {
-    required Map<String, dynamic> infos,
+    required Map<String, Object> infos,
   }) async {
     for (var element in trackers) {
       element.trackCustomEvent(eventName, infos: infos);
@@ -63,7 +63,7 @@ class TrackersManager {
 
   Future stopTrackPage(
     String pageName, {
-    Map<String, dynamic>? infos,
+    Map<String, Object>? infos,
   }) async {
     for (var element in trackers) {
       element.stopTrackPage(pageName, infos: infos);
@@ -75,7 +75,7 @@ class TrackersManager {
   Future logSuccessLogin(
     String userId,
     String email, {
-    Map<String, dynamic>? aditionalInfos,
+    Map<String, Object>? aditionalInfos,
   }) async {
     for (var element in trackers) {
       element.logSuccessLogin(

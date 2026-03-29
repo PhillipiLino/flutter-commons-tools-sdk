@@ -1,4 +1,4 @@
-part of commons_tools_sdk;
+part of 'input_formatters.dart';
 
 @Deprecated('Use CurrencyInputFormatter with decimals')
 class DoubleCurrencyInputFormatter extends TextInputFormatter {

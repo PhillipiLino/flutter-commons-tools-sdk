@@ -1,5 +1,3 @@
-library commons_tools_sdk;
-
 import 'package:logger/logger.dart';
 
 part 'log_manager.dart';

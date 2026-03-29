@@ -1,4 +1,4 @@
-part of commons_tools_sdk;
+part of 'preferences.dart';
 
 class SharedPreferencesAdapter implements IPreferences {
   final _preferences = SharedPreferences.getInstance();

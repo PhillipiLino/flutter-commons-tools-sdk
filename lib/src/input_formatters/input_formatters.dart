@@ -1,10 +1,10 @@
-library commons_tools_sdk;
+library;
 
 import 'package:flutter/services.dart';
-import 'package:intl/intl.dart';
 
-import '../commons_tools_sdk.dart';
+import '../../commons_tools_sdk.dart';
 
+part 'cep_input_formatter.dart';
 part 'cnpj_input_formatter.dart';
 part 'cpf_cnpj_input_formatter.dart';
 part 'cpf_input_formatter.dart';

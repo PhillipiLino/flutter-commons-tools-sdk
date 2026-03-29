@@ -1,4 +1,5 @@
 // coverage:ignore-file
-part of commons_tools_sdk;
 
-hideKeyboard() => FocusManager.instance.primaryFocus?.unfocus();
+import 'package:flutter/widgets.dart';
+
+void hideKeyboard() => FocusManager.instance.primaryFocus?.unfocus();

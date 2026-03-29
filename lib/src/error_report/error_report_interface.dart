@@ -1,5 +1,3 @@
-part of commons_tools_sdk;
-
 abstract class IErrorReport {
   Future recordException({
     required Exception exception,

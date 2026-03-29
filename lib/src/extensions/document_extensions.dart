@@ -1,4 +1,4 @@
-part of commons_tools_sdk;
+import '../../commons_tools_sdk.dart';
 
 extension DocumentStringExtension on String? {
   bool get isValidCPF {

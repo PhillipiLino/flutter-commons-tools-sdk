@@ -1,1 +1,1 @@
-export 'src/error_report/error_report.dart' show IErrorReport;
+export 'src/error_report/error_report_interface.dart' show IErrorReport;

@@ -1,4 +1,4 @@
-part of commons_tools_sdk;
+part of 'logger.dart';
 
 enum LogType {
   request,

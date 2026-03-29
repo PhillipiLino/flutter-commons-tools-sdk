@@ -1,4 +1,4 @@
-part of commons_tools_sdk;
+part of 'remote_config.dart';
 
 abstract class IExternalRemoteConfigs {
   Future<void> setUser(

@@ -2,6 +2,7 @@
 
 export 'src/input_formatters/input_formatters.dart'
     show
+        CEPInputFormatter,
         CNPJInputFormatter,
         CPFAndCNPJInputFormatter,
         CPFInputFormatter,

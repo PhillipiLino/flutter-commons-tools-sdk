@@ -1,4 +1,6 @@
-part of commons_tools_sdk;
+import 'package:intl/intl.dart';
+
+import '../constants/regex.dart';
 
 extension NullableStringExtension on String? {
   bool get isValidEmail => RegExp(emailRegex).hasMatch(this ?? '');

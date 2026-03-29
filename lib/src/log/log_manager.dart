@@ -1,4 +1,4 @@
-part of commons_tools_sdk;
+part of 'logger.dart';
 
 class LogManager {
   LoggerAdapter? logger;
@@ -10,7 +10,7 @@ class LogManager {
 
   LogManager.internal() : logger = LoggerAdapter();
 
-  logRequestEvent(RequestLogEvent event) {
+  void logRequestEvent(RequestLogEvent event) {
     final message = event.toJson();
     switch (event.logType) {
       case LogType.request:
@@ -30,12 +30,12 @@ class LogManager {
     }
   }
 
-  logWarning(dynamic message) {
+  void logWarning(dynamic message) {
     if (!typesToLog.contains(LogType.warning)) return;
     logger?.logWarning(message);
   }
 
-  logInfo(dynamic message) {
+  void logInfo(dynamic message) {
     if (!typesToLog.contains(LogType.info) &&
         !typesToLog.contains(LogType.request)) {
       return;
@@ -44,12 +44,12 @@ class LogManager {
     logger?.logInfo(message);
   }
 
-  logError(dynamic message) {
+  void logError(dynamic message) {
     if (!typesToLog.contains(LogType.error)) return;
     logger?.logError(message);
   }
 
-  logVerbose(dynamic message) {
+  void logVerbose(dynamic message) {
     if (!typesToLog.contains(LogType.info) &&
         !typesToLog.contains(LogType.responseRequest)) {
       return;
@@ -58,7 +58,7 @@ class LogManager {
     logger?.logVerbose(message);
   }
 
-  logSpecificData(dynamic message) {
+  void logSpecificData(dynamic message) {
     if (!typesToLog.contains(LogType.specificData)) return;
     logger?.logStrange(message);
   }
