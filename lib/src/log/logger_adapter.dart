@@ -1,11 +1,9 @@
 part of 'logger.dart';
 
 class LoggerAdapter {
-  Logger? logger;
+  final Logger logger;
 
-  LoggerAdapter() {
-    logger = Logger();
-  }
+  LoggerAdapter() : logger = Logger();
 
   dynamic logWarning(dynamic message) => log(message, Level.warning);
 
@@ -17,5 +15,5 @@ class LoggerAdapter {
 
   dynamic logStrange(dynamic message) => log(message, Level.fatal);
 
-  void log(dynamic message, Level level) => logger?.log(level, message);
+  void log(dynamic message, Level level) => logger.log(level, message);
 }
