@@ -4,11 +4,11 @@ class LogManager {
   LoggerAdapter? logger;
   List<LogType> typesToLog = [];
 
-  static final LogManager shared = LogManager.internal();
+  static final LogManager shared = LogManager._internal();
 
   factory LogManager() => shared;
 
-  LogManager.internal() : logger = LoggerAdapter();
+  LogManager._internal() : logger = LoggerAdapter();
 
   void logRequestEvent(RequestLogEvent event) {
     final message = event.toJson();
