@@ -12,11 +12,11 @@
 //   Future<void> setUser(
 //     String userId,
 //     String userEmail, {
-//     Map<String, dynamic>? aditionalInfos,
+//     Map<String, dynamic>? additionalInfos,
 //   }) async {
 //     LDUserBuilder userBuilder = LDUserBuilder(userId);
 //     userBuilder.email(userEmail);
-//     for (var element in (aditionalInfos ?? {}).entries) {
+//     for (var element in (additionalInfos ?? {}).entries) {
 //       userBuilder.custom(element.key, LDValue.fromCodecValue(element.value));
 //     }
 

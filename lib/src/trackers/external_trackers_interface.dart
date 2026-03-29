@@ -4,14 +4,14 @@ abstract class IExternalTrackers {
   Future logSuccessLogin(
     String userId,
     String email, {
-    Map<String, Object>? aditionalInfos,
+    Map<String, Object>? additionalInfos,
   });
 
-  Future setLogedUser({
+  Future setLoggedUser({
     required String userId,
     required String email,
     required String name,
-    Map<String, Object>? aditionalInfos,
+    Map<String, Object>? additionalInfos,
   });
 
   Future removeUserData();

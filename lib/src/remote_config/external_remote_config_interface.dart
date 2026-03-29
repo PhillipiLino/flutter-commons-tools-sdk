@@ -4,7 +4,7 @@ abstract class IExternalRemoteConfigs {
   Future<void> setUser(
     String userId,
     String userEmail, {
-    Map<String, dynamic>? aditionalInfos,
+    Map<String, dynamic>? additionalInfos,
   });
   Future<bool> getBool(String key, bool defaultValue);
   Future<int> getInt(String key, int defaultValue);

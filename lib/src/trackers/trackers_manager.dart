@@ -5,18 +5,18 @@ class TrackersManager {
 
   TrackersManager(this.trackers);
 
-  Future setLogedUser({
+  Future setLoggedUser({
     required String userId,
     required String email,
     required String name,
-    Map<String, Object>? aditionalInfos,
+    Map<String, Object>? additionalInfos,
   }) async {
     for (var element in trackers) {
-      element.setLogedUser(
+      element.setLoggedUser(
         userId: userId,
         email: email,
         name: name,
-        aditionalInfos: aditionalInfos,
+        additionalInfos: additionalInfos,
       );
     }
 
@@ -75,13 +75,13 @@ class TrackersManager {
   Future logSuccessLogin(
     String userId,
     String email, {
-    Map<String, Object>? aditionalInfos,
+    Map<String, Object>? additionalInfos,
   }) async {
     for (var element in trackers) {
       element.logSuccessLogin(
         userId,
         email,
-        aditionalInfos: aditionalInfos,
+        additionalInfos: additionalInfos,
       );
     }
 

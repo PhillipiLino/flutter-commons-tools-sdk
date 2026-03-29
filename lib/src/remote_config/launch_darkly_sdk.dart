@@ -64,12 +64,12 @@
 //   Future<void> setUser(
 //     String userId,
 //     String userEmail, {
-//     Map<String, dynamic>? aditionalInfos,
+//     Map<String, dynamic>? additionalInfos,
 //   }) async {
 //     return await launchDarklyAdapter.setUser(
 //       userId,
 //       userEmail,
-//       aditionalInfos: aditionalInfos,
+//       additionalInfos: additionalInfos,
 //     );
 //   }
 // }
