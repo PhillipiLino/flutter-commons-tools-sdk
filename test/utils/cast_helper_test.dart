@@ -1,7 +1,24 @@
+import 'package:commons_tools_sdk/logger.dart';
 import 'package:commons_tools_sdk/src/commons_tools_sdk.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:logger/logger.dart';
+
+import '../log/logger_adapter_spy.dart';
 
 void main() {
+  late LoggerAdapterSpy loggerSpy;
+
+  setUp(() {
+    loggerSpy = LoggerAdapterSpy();
+    LogManager.shared
+      ..logger = loggerSpy
+      ..typesToLog = [LogType.warning];
+  });
+
+  tearDown(() {
+    LogManager.shared.typesToLog = [];
+  });
+
   test('Cast string succefull', () {
     // Arrange
     String? myVar = '';
@@ -96,5 +113,36 @@ void main() {
 
     // Assert
     expect(myVar, null);
+  });
+
+  test('logs warning with expected type, received type and value on cast failure', () {
+    // Act
+    castOrNull<String>(42);
+
+    // Assert
+    expect(loggerSpy.currentLevel, Level.warning);
+    expect(
+      loggerSpy.loggedMessage,
+      contains('String'),
+      reason: 'should mention the expected type',
+    );
+    expect(
+      loggerSpy.loggedMessage,
+      contains('int'),
+      reason: 'should mention the received type',
+    );
+    expect(
+      loggerSpy.loggedMessage,
+      contains('42'),
+      reason: 'should include the received value',
+    );
+  });
+
+  test('does not log warning when value is null', () {
+    // Act
+    castOrNull<String>(null);
+
+    // Assert
+    expect(loggerSpy.loggedMessage, isNull);
   });
 }
